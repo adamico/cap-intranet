@@ -34,12 +34,23 @@ body {
       background: #cccccc; }
 
 /* Alertes */
-#alertes {
-  padding-left: 20px; }
+#alertes p {
+  border-bottom: 1px dotted black;
+  padding-bottom: 5px; }
   #alertes p a {
     display: block; }
+    #alertes p a.inline {
+      display: inline; }
 
 p#date {
   padding: 0;
   margin: 0;
   font-weight: bold; }
+
+/* Footer /* */
+footer {
+  background: black;
+  margin: 0;
+  padding: 18px;
+  height: 54px;
+  color: white; }

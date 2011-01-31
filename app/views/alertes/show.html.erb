@@ -9,15 +9,8 @@
 
 <% content_for :body_content_right do %>
   <aside>
-    <h2><%= t('.other') %></h2>
-    <div id="alertes">
-      <% @alertes.each do |alerte| %>
-        <p>
-          <%= l(alerte.date) %>
-          <%= link_to alerte.titre, alerte_url(alerte) %>
-        </p>
-      <% end %>
-    </div>
+    <h2><%= link_to "Autres alertes", alertes_path %></h2>
+    <%= render :partial => 'alertes/recent', :locals => { :alertes => Alerte.recent} %>
   </aside>
 <% end %>
 

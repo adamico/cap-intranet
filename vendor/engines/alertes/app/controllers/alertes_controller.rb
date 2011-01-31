@@ -20,7 +20,9 @@ class AlertesController < ApplicationController
 protected
 
   def find_all_alertes
-    @alertes = Alerte.find(:all, :order => "position ASC")
+    # Order by alerte date
+    alertes = Alerte.order("date DESC")
+    @alertes_annees = alertes.group_by { |a| a.date.beginning_of_year }
   end
 
   def find_page

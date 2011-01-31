@@ -1,0 +1,10 @@
+<% unless alertes.empty? -%>
+  <div id="alertes">
+    <% for alerte in alertes -%>
+      <p>
+        <%= l(alerte.date) %>
+        <%= link_to alerte.titre, alerte_url(alerte) %>
+      </p>
+    <% end -%>
+  </div>
+<% end -%>

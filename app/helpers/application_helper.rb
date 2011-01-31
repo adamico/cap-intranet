@@ -1,3 +1,4 @@
+# encoding: utf-8
 module ApplicationHelper
   def site_bar_switch_link
     link_to_if(admin?, t('my_override.switch_to_your_website'),
@@ -12,6 +13,15 @@ module ApplicationHelper
                else
                 admin_root_path
                end rescue admin_root_path)
+    end
+  end
+  def links_to_categories(object, method = "name")
+    unless object.send("categories").empty?
+      links = []
+      object.send("categories").each do |item|
+        links << link_to(item.send(method).upcase, "#", :class => "inline")#polymorphic_path(item))
+      end
+      safe_concat "<strong>Catégories : </strong>" + links.join(', ')
     end
   end
 end

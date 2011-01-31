@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110128150833) do
+ActiveRecord::Schema.define(:version => 20110131131551) do
 
   create_table "alertes", :force => true do |t|
     t.string   "titre"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(:version => 20110128150833) do
   end
 
   add_index "alertes", ["id"], :name => "index_alertes_on_id"
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_alertes", :id => false, :force => true do |t|
+    t.integer "categorie_id"
+    t.integer "alerte_id"
+  end
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"

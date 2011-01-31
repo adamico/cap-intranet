@@ -1,0 +1,37 @@
+<%= form_for [:admin, @alerte] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @alerte,
+    :include_object_name => true
+  } %>
+
+  <div class='field'>
+    <%= f.label :titre -%>
+    <%= f.text_field :titre, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+  <label for="alerte_categories">Catégories</label>
+    <% for categorie in Categorie.all %>
+      <%= check_box_tag "alerte[categorie_ids][]", categorie.id, @alerte.categories.include?(categorie) -%>
+      <%= categorie.name.upcase -%>
+    <% end %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :date -%>
+    <%= f.date_select :date -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :contenu -%>
+    <%= f.text_area :contenu, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.alertes.alerte'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @alerte.titre)
+              } %>
+<% end -%>
