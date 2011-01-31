@@ -4,6 +4,6 @@
 <section id='body_content_right'>
   <aside>
     <h2><%= link_to "Alertes", alertes_path %></h2>
-    <%= render :partial => 'alertes/recent', :locals => { :alertes => Alerte.recent} %>
+    <%= render :partial => 'alertes/recent', :locals => {:alertes => Alerte.recent.with_categorie(@page.title.downcase)} %>
   </aside>
 </section>

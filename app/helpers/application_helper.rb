@@ -19,7 +19,7 @@ module ApplicationHelper
     unless object.send("categories").empty?
       links = []
       object.send("categories").each do |item|
-        links << link_to(item.send(method).upcase, "#", :class => "inline")#polymorphic_path(item))
+        links << link_to(item.send(method).upcase, {:categorie => item.send(method)}, :class => "inline")#polymorphic_path(item))
       end
       safe_concat "<strong>Catégories : </strong>" + links.join(', ')
     end

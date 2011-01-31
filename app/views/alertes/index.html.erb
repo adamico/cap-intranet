@@ -1,4 +1,12 @@
 <% content_for :body_content_left do %>
+  <div id="select_categories">
+    <h4>Filtrer par catégorie</h4>
+    <% Categorie.all.each do |categorie| %>
+      <%= link_to categorie.name.upcase, :categorie => categorie.name %> |
+    <% end %>
+    <%= link_to "Toutes", alertes_path %>
+    <hr>
+  </div>
   <div id="alertes">
     <% @alertes_annees.each do |annee, alertes| %>
       <h3><%= annee.strftime("%Y") %></h3>

@@ -1,4 +1,6 @@
-<% unless alertes.empty? -%>
+<% if alertes.empty? -%>
+  Aucune alerte.
+<% else -%>
   <div id="alertes">
     <% for alerte in alertes -%>
       <p>
