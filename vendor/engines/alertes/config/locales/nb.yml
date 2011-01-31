@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    alertes:
+      title: Alertes
+  admin:
+    alertes:
+      index:
+        title: Alertes
+        create_new: Lag en ny Alerte
+        reorder: Endre rekkefølgen på Alertes
+        reorder_done: Ferdig å endre rekkefølgen Alertes
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Alertes enda. Klikk på "Lag en ny Alerte" for å legge til din første alerte.
+      alerte:
+        view_live_html: Vis hvordan denne alerte ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne alerte
+        delete: Fjern denne alerte permanent
+  alertes:
+    show:
+      other: Andre Alertes

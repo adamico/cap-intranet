@@ -1,0 +1,24 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    alertes:
+      title: Alertes
+  admin:
+    alertes:
+      index:
+        title: Alertes
+        create_new: CREATE NEW Alerte
+        reorder: REORDR Alertes
+        reorder_done: DUN REORDERIN Alertes
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Alertes YET. CLICK "CREATE NEW Alerte" 2 ADD UR FURST alerte.
+      alerte:
+        view_live_html: VIEW DIS alerte LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS alerte
+        delete: REMOOV DIS alerte FOREVR
+  alertes:
+    show:
+      other: OTHR Alertes

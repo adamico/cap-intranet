@@ -5,7 +5,9 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+group :development do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -60,7 +62,6 @@ end
 
 # USER DEFINED
 
-
 # Specify additional Refinery CMS Engines here (all optional):
 gem 'refinerycms-generators',   '~> 0.9'
 # gem 'refinerycms-inquiries',    '~> 0.9.9.9'
@@ -71,7 +72,9 @@ gem 'refinerycms-generators',   '~> 0.9'
 # gem 'refinerycms-blog',         '~> 1.1'
 
 # Add i18n support (optional, you can remove this if you really want to).
-gem 'refinerycms-i18n',         '~> 0.9'
+gem 'refinerycms-i18n',         '~> 0.9.9'
 
 
 # END USER DEFINED
+
+gem 'refinerycms-alertes', '1.0', :path => 'vendor/engines'

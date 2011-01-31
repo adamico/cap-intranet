@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="alertes">
+    <% @alertes.each do |alerte| %>
+      <li>
+        <%= link_to alerte.titre, alerte_url(alerte) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

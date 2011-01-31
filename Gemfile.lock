@@ -1,3 +1,8 @@
+PATH
+  remote: vendor/engines
+  specs:
+    refinerycms-alertes (1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -198,8 +203,9 @@ DEPENDENCIES
   rack-test (~> 0.5.6)
   rails (= 3.0.3)
   refinerycms (= 0.9.9)
+  refinerycms-alertes (= 1.0)!
   refinerycms-generators (~> 0.9)
-  refinerycms-i18n (~> 0.9)
+  refinerycms-i18n (~> 0.9.9)
   rspec-rails (= 2.3)
   ruby-prof
   spork
