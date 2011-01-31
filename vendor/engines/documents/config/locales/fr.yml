@@ -1,0 +1,24 @@
+fr:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    documents:
+      title: Documents
+  admin:
+    documents:
+      index:
+        title: Documents
+        create_new: Créer une nouveau Document
+        reorder: Reordonner les Documents
+        reorder_done: Fin de réordonnancement des Documents
+        sorry_no_results: "Désolé ! Aucun résultat."
+        no_items_yet: "Il n'y a actuellement aucun Document. Cliquer sur 'Créer un nouveau Document' pour en ajouter un."
+      document:
+        view_live_html: Voior ce document <br/><em>(Ouvre une nouvelle fenêtre)</em>
+        edit: Modifier ce document
+        delete: Supprimer définitivement ce document
+  documents:
+    show:
+      other: Autres Documents

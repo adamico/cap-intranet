@@ -1,0 +1,24 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    documents:
+      title: Documents
+  admin:
+    documents:
+      index:
+        title: Documents
+        create_new: CREATE NEW Document
+        reorder: REORDR Documents
+        reorder_done: DUN REORDERIN Documents
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Documents YET. CLICK "CREATE NEW Document" 2 ADD UR FURST document.
+      document:
+        view_live_html: VIEW DIS document LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS document
+        delete: REMOOV DIS document FOREVR
+  documents:
+    show:
+      other: OTHR Documents

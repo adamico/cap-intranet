@@ -1,0 +1,24 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    documents:
+      title: Documents
+  admin:
+    documents:
+      index:
+        title: Documents
+        create_new: Add New Document
+        reorder: Reorder Documents
+        reorder_done: Done Reordering Documents
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Documents yet. Click "Add New Document" to add your first document.
+      document:
+        view_live_html: View this document live <br/><em>(opens in a new window)</em>
+        edit: Edit this document
+        delete: Remove this document forever
+  documents:
+    show:
+      other: Other Documents

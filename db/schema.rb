@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110131131551) do
+ActiveRecord::Schema.define(:version => 20110131172751) do
 
   create_table "alertes", :force => true do |t|
     t.string   "titre"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(:version => 20110131131551) do
     t.integer "categorie_id"
     t.integer "alerte_id"
   end
+
+  create_table "documents", :force => true do |t|
+    t.string   "titre"
+    t.integer  "source_id"
+    t.text     "contenu"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "documents", ["id"], :name => "index_documents_on_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"

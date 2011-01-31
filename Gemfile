@@ -82,3 +82,5 @@ gem 'refinerycms-i18n',         '~> 0.9.9'
 # END USER DEFINED
 
 gem 'refinerycms-alertes', '1.0', :path => 'vendor/engines'
+
+gem 'refinerycms-documents', '1.0', :path => 'vendor/engines'

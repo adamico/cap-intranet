@@ -1,0 +1,28 @@
+<% content_for :body_content_title do %>
+  <%= @document.titre %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <p><%= link_to @document.source.file_name, @document.source.url %></p>
+  </section>
+
+  <section>
+    <p><%=raw @document.contenu %></p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+<aside>
+  <h2><%= t('.other') %></h2>
+  <ul id="documents">
+    <% @documents.each do |document| %>
+      <li>
+        <%= link_to document.titre, document_url(document) %>
+      </li>
+    <% end %>
+  </ul>
+</aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

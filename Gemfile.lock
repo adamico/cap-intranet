@@ -8,6 +8,7 @@ PATH
   remote: vendor/engines
   specs:
     refinerycms-alertes (1.0)
+    refinerycms-documents (1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -218,6 +219,7 @@ DEPENDENCIES
   rails (= 3.0.3)
   refinerycms (= 0.9.9)
   refinerycms-alertes (= 1.0)!
+  refinerycms-documents (= 1.0)!
   refinerycms-generators (~> 0.9)
   refinerycms-i18n (~> 0.9.9)
   refinerycms-memberships (~> 1.0)!

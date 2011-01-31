@@ -2,3 +2,5 @@ fr:
   my_override:
     switch_to_your_website: Voir le site
     switch_to_your_website_editor: Modifier le site
+    download_current: Télécharger le fichier actuel
+    remove_current: Supprimer le fichier actuel
