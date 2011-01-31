@@ -34,13 +34,15 @@ body {
       background: #cccccc; }
 
 /* Alertes */
-#alertes p {
-  border-bottom: 1px dotted black;
-  padding-bottom: 5px; }
-  #alertes p a {
-    display: block; }
-    #alertes p a.inline {
-      display: inline; }
+#alertes {
+  padding-left: 10px; }
+  #alertes p {
+    border-bottom: 1px dotted black;
+    padding-bottom: 5px; }
+    #alertes p a {
+      display: block; }
+      #alertes p a.inline {
+        display: inline; }
 
 p#date {
   padding: 0;

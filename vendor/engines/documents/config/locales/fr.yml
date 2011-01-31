@@ -16,7 +16,7 @@ fr:
         sorry_no_results: "Désolé ! Aucun résultat."
         no_items_yet: "Il n'y a actuellement aucun Document. Cliquer sur 'Créer un nouveau Document' pour en ajouter un."
       document:
-        view_live_html: Voior ce document <br/><em>(Ouvre une nouvelle fenêtre)</em>
+        view_live_html: Voir ce document <br/><em>(Ouvre une nouvelle fenêtre)</em>
         edit: Modifier ce document
         delete: Supprimer définitivement ce document
   documents:

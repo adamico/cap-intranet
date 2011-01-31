@@ -1,4 +1,5 @@
 Toxnotes::Application.routes.draw do
+  match '/events(/:year(/:month))' => 'events#index', :as => :events, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,38 @@
+<% content_for :body_content_title do %>
+  <%= @event.titre %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <p>Début : <%= l @event.start_at %></p>
+    <p>Durée : <%= distance_of_time_in_words(@event.start_at, @event.end_at) %></p>
+  </section>
+  
+  <% unless @event.contenu.blank? %>
+    <section>
+      <h1>Contenu</h1>
+      <p><%=raw @event.contenu %></p>
+    </section>
+  <% end %>
+<% end %>
+
+<% content_for :body_content_right do %>
+<aside>
+  <h2>Prochains événements</h2>
+  <% @events.reject! { |event| event === @event } %>
+  <% if @events.empty? %>
+    Aucun événement.
+  <% else %>
+    <div id="events">
+      <% @events.each do |event| %>
+        <p>
+          <%= event.start_at.strftime("%d/%m/%Y") %> :
+          <%= link_to event.titre, event_url(event) %>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+</aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

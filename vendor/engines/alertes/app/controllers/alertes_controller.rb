@@ -22,7 +22,7 @@ protected
   def find_all_alertes
     # Order by alerte date
     params[:categorie] ||= {}
-    alertes = Alerte.order("date DESC").with_categorie(params[:categorie])
+    alertes = Alerte.order("date DESC").with_categorie(params[:categorie]).uniq
     @alertes_annees = alertes.group_by { |a| a.date.beginning_of_year }
   end
 
