@@ -5,8 +5,11 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'haml'
+
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'haml-rails'
 end
 
 # Use unicorn as the web server
@@ -70,6 +73,7 @@ gem 'refinerycms-generators',   '~> 0.9'
 # gem 'refinerycms-theming',      '~> 0.9.9'
 # gem 'refinerycms-search',       '~> 0.9.8'
 # gem 'refinerycms-blog',         '~> 1.1'
+gem 'refinerycms-memberships',    '~> 1.0', :git => 'https://github.com/rbriank/refinerycms_membership.git'
 
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '~> 0.9.9'

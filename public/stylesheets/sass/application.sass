@@ -1,0 +1,47 @@
+/*
+ *Override default refinery application CSS below.
+ *Formatting applies to all frontend.
+@import url('refinery/application.css')
+
+body
+  background: #DDD
+  font-family: Verdana
+  font-size: 13px
+  line-height: 18px
+
+#body_content_left, #body_content_right
+  float: left
+  background: white
+  color: #333
+  padding: 20px
+
+#body_content_left
+  width: 55%
+#body_content_right
+  width: 35%
+  border-left: 1px dotted black
+
+#menu ul
+  list-style: none
+  padding: 0px
+  li
+    float: left
+    margin-right: 10px
+    a
+      display: block
+      padding: 5px 10px
+      text-decoration: none
+    &.selected a, a:hover
+      background: #CCC
+
+/* Alertes
+
+#alertes
+  padding-left: 20px
+  p a
+    display: block
+
+p#date
+  padding: 0
+  margin: 0
+  font-weight: bold

@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/rbriank/refinerycms_membership.git
+  revision: f45950ad0b7c59db3f88cfe0c7a1212eb65f2f19
+  specs:
+    refinerycms-memberships (1.0)
+
 PATH
   remote: vendor/engines
   specs:
@@ -90,6 +96,12 @@ GEM
     globalize3 (0.1.0.beta)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
+    haml (3.0.25)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     i18n (0.5.0)
     json (1.4.6)
     json_pure (1.5.1)
@@ -198,6 +210,8 @@ DEPENDENCIES
   database_cleaner
   factory_girl
   gherkin
+  haml
+  haml-rails
   json_pure
   launchy
   rack-test (~> 0.5.6)
@@ -206,6 +220,7 @@ DEPENDENCIES
   refinerycms-alertes (= 1.0)!
   refinerycms-generators (~> 0.9)
   refinerycms-i18n (~> 0.9.9)
+  refinerycms-memberships (~> 1.0)!
   rspec-rails (= 2.3)
   ruby-prof
   spork
