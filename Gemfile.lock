@@ -120,6 +120,7 @@ GEM
     moretea-awesome_nested_set (1.4.3.1)
       activerecord (~> 3.0.0)
     nokogiri (1.4.4)
+    pg (0.10.1)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-cache (0.5.3)
@@ -218,6 +219,7 @@ DEPENDENCIES
   haml-rails
   json_pure
   launchy
+  pg
   rack-test (~> 0.5.6)
   rails (= 3.0.3)
   refinerycms (= 0.9.9)
