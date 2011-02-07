@@ -1,1 +1,42 @@
+<% content_for :body_content_left do %>
+  <%=raw @page[:body] %>
+  <div class="wrap_last_stuff">
+    <section class="column alertes">
+      <h3><%= link_to "Alertes", alertes_path %></h3>
+      <%= render :partial => 'alertes/recent', :locals => { :alertes => Alerte.recent} %>
+    </section>
+    <section class="column documents">
+      <h3><%= link_to "Documents", documents_path %></h3>
+      <% if Document.recent.empty? %>
+        Aucun document.
+      <% else %>
+        <div class="liste">
+          <% Document.recent.each do |document| %>
+            <p>
+              <%= link_to document.titre, document_url(document) %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+    <section class="column enquetes">
+      <h3>Enquêtes</h3>
+    </section>
+    <section class="column events">
+      <h3><%= link_to "Événements", events_path %></h3>
+      <% if Event.next.empty? %>
+        Aucun événement.
+      <% else %>
+        <div class="liste">
+          <% Event.next.each do |event| %>
+            <p>
+              <%= event.start_at.strftime("%d/%m/%Y") %> :
+              <%= link_to event.titre, event_url(event) %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </div>
+<% end %>
 <%= render :partial => "/shared/content_page" %>

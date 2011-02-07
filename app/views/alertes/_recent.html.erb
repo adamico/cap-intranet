@@ -1,10 +1,10 @@
 <% if alertes.empty? -%>
   Aucune alerte.
 <% else -%>
-  <div id="alertes">
+  <div class="liste alertes">
     <% for alerte in alertes -%>
       <p>
-        <%= l(alerte.date) %>
+        <span class="label"><%= l(alerte.date) %></span>
         <%= link_to alerte.titre, alerte_url(alerte) %>
       </p>
     <% end -%>

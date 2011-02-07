@@ -1,7 +1,7 @@
 <% content_for :body_content_left do %>
-  <div id="alertes">
+  <div class="liste alertes">
     <% @alertes_annees.each do |annee, alertes| %>
-      <h3><%= annee.strftime("%Y") %></h3>
+      <h2><%= annee.strftime("%Y") %></h2>
       <% alertes.each do |alerte| %>
         <p>
           <%= l(alerte.date) %>

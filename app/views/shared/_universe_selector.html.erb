@@ -1,11 +1,11 @@
 <div id="universe_selector_wrap">
   Choix de l'univers :
-  <nav id="universe_selector">
-    <ul class="menu">
+  <nav id="menu">
+    <ul>
       <% %w(cap crpv ceip).each do |univers|%>
-        <li><%= link_to_unless_current univers.upcase, :categorie => univers %></li>
+        <li class=<%= (params[:categorie] == univers) ? "selected" : "" %>><%= link_to univers.upcase, :categorie => univers %></li>
       <% end %>
-      <li><%= link_to "Tous", "/#{params[:controller]}" %></li>
+      <li class=<%= params[:categorie] == {} ? "selected" : ""%>><%= link_to "Tous", "/#{params[:controller]}" %></li>
     </ul>
   </nav>
 </div>

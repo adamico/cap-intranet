@@ -34,9 +34,57 @@ body
     &.selected a, a:hover
       background: #CCC
 
-/* Alertes
 
-#alertes
+/* Home */
+
+$cols: 4
+$col_margin: 10px
+$wrap_margin: 20px
+$wrap_width: 1000px - $wrap_margin * 2
+
+$page_width: 1000px
+
+
+.wrap_last_stuff
+  width: $wrap_width
+  margin: 0 $wrap_margin 0 $wrap_margin
+
+.column
+  margin-right: $col_margin
+  float: left
+  width: $wrap_width/$cols - $col_margin
+  h3
+    color: white
+    text-shadow: 0 1px 0 #000000
+    text-transform: uppercase
+    text-align: center
+    a
+      text-decoration: none
+      color: inherit
+
+.documents
+  h3
+    background: #588119
+  span.label
+    color: #588119
+.alertes
+  h3
+    background: #873D1A
+  span.label
+    color: #873D1A
+.events
+  h3
+    background: #156F50
+  span.label
+    color: #156F50
+.enquetes
+  h3
+    background: #7B1847
+  span.label
+    color: #7B1847
+
+
+.liste
   padding-left: 10px
   p
     border-bottom: 1px dotted black
@@ -45,11 +93,30 @@ body
       display: block
       &.inline
         display: inline
+    &:last-child
+      border-bottom: none
 
 p#date
   padding: 0
   margin: 0
   font-weight: bold
+
+/* Alertes
+.alertes
+  h2
+    margin-left: -10px
+    padding: 10px
+    background: #873D1A
+    color: white
+    text-shadow: 0 1px 0 #000000
+    a
+      text-decoration: none
+      color: inherit
+
+/* Universe selector */
+
+#universe_selector_wrap
+  float: right
 
 /* Footer /*
 
