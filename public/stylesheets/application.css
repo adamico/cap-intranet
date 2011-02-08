@@ -1,6 +1,11 @@
 /*Override default refinery application CSS below.
  *Formatting applies to all frontend. */
 @import url('refinery/application.css');
+/*http://colorschemedesigner.com/#2s42qryLpA-M9 */
+/* Primary Color */
+/* Secondary Color A */
+/* Secondary Color B */
+/* Complementary Color */
 body {
   background: #dddddd;
   font-family: Verdana;
@@ -52,24 +57,24 @@ body {
       color: inherit; }
 
 .documents h3 {
-  background: #588119; }
+  background: #588f08; }
 .documents span.label {
-  color: #588119; }
-
-.alertes h3 {
-  background: #873d1a; }
-.alertes span.label {
-  color: #873d1a; }
+  color: #588f08; }
 
 .events h3 {
-  background: #156f50; }
+  background: #09557a; }
 .events span.label {
-  color: #156f50; }
+  color: #09557a; }
 
 .enquetes h3 {
-  background: #7b1847; }
+  background: #955408; }
 .enquetes span.label {
-  color: #7b1847; }
+  color: #955408; }
+
+.alertes h3 {
+  background: #890843; }
+.alertes span.label {
+  color: #890843; }
 
 .liste {
   padding-left: 10px; }
