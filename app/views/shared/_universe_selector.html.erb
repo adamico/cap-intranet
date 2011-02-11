@@ -4,11 +4,20 @@
     <ul>
       <% %w(cap crpv ceip).each do |universe|%>
         <li class=<%= (params[:categorie] == universe) ? "selected" : "" %>>
-          <%= link_to universe.upcase, current_path(:categorie => universe, :month => @month, :year => @year) %>
+          <% if params[:controller] == "pages" %>
+            <%= link_to universe.upcase, :categorie => universe %>
+          <% else %>
+            <%= link_to universe.upcase, current_path(:categorie => universe, :month => @month, :year => @year) %>
+          <% end %>
         </li>
       <% end %>
       <li class=<%= params[:categorie] == {} ? "selected" : ""%>>
-        <%= link_to "Tous", polymorphic_path(params[:controller]) %>
+        <% if params[:controller] == "pages" %>
+          <%= link_to "Tous", root_path %>
+        <% else %>
+          <%= link_to "Tous", polymorphic_path(params[:controller]) %>
+        <% end %>
+
       </li>
     </ul>
   </nav>

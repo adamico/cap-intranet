@@ -3,6 +3,7 @@
     <%= event.titre %>
     <span class="preview">&nbsp;</span>
   </span>
+  <span class='date'><%= event.start_at.strftime("%d/%m/%Y") %></span>
   <span class='categorie'>
     <% Categorie.all %>
     <%= event.categories_names.join(", ") rescue "" %>
