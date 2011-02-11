@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  is_categorisable
 
   has_event_calendar
 
@@ -6,6 +7,8 @@ class Event < ActiveRecord::Base
 
   validates :titre, :presence => true, :uniqueness => true
 
-  scope :next, order('start_at ASC').
-    where(:start_at => Time.now..(Time.now.midnight + 7.days))
+  def self.next
+    where(:start_at => Time.now..(Time.now.midnight + 7.days)).
+      order('start_at ASC')
+  end
 end

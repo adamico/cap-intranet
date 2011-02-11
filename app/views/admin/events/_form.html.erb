@@ -1,0 +1,43 @@
+<%= form_for [:admin, @event] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @event,
+    :include_object_name => true
+  } %>
+
+  <div class='field'>
+    <%= f.label :titre -%>
+    <%= f.text_field :titre, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <label for="event_categories">Catégories</label>
+    <% for categorie in Categorie.all %>
+      <% events = categorie.events %>
+      <%= check_box_tag "event[categories_names][]", categorie.name, @event.categories_names.include?(categorie.name) -%>
+      <%= categorie.name.upcase -%>
+    <% end %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :start_at -%>
+    <%= f.datetime_select :start_at -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :end_at -%>
+    <%= f.datetime_select :end_at -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :contenu -%>
+    <%= f.text_area :contenu, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.events.event'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @event.titre)
+              } %>
+<% end -%>

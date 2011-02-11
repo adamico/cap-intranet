@@ -8,11 +8,12 @@
     <%= f.label :titre -%>
     <%= f.text_field :titre, :class => 'larger widest' -%>
   </div>
-  
+
   <div class='field'>
-  <label for="alerte_categories">Catégories</label>
-    <% for categorie in Categorie.all %>
-      <%= check_box_tag "alerte[categorie_ids][]", categorie.id, @alerte.categories.include?(categorie) -%>
+    <label for="alerte_categories">Catégories</label>
+    <% categories = Categorie.all %>
+    <% categories.each do |categorie| %>
+      <%= check_box_tag "alerte[categories_names][]", categorie.name, @alerte.categories_names.include?(categorie.name) -%>
       <%= categorie.name.upcase -%>
     <% end %>
   </div>

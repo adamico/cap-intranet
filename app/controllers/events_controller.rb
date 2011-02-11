@@ -13,7 +13,13 @@ class EventsController < ApplicationController
 
     @shown_month = Date.civil(@year, @month)
 
-    @event_strips = Event.event_strips_for_month(@shown_month)
+    if params[:categorie]
+      categorie = Categorie.find_by_name(params[:categorie])
+      events = categorie.events.event_strips_for_month(@shown_month)
+    else
+      events = Event.event_strips_for_month(@shown_month)
+    end
+    @event_strips = events
 
     # To restrict what events are included in the result you can pass additional find options like this:
     #

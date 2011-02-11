@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -91,3 +91,5 @@ gem 'refinerycms-documents', '1.0', :path => 'vendor/engines'
 gem 'refinerycms-events', '1.0', :path => 'vendor/engines'
 
 gem 'event-calendar', :require => 'event_calendar'
+
+gem 'kronn-has_many_polymorphs'

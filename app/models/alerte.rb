@@ -1,14 +1,11 @@
 class Alerte < ActiveRecord::Base
+  is_categorisable
 
   acts_as_indexed :fields => [:titre, :contenu]
 
   validates :titre, :presence => true, :uniqueness => true
 
-  has_and_belongs_to_many :categories, :join_table => "categories_alertes"
-
-  # scopes
-  scope :recent, order('date DESC').limit(5)
-  scope :with_categorie, lambda {
-    |cat| joins(:categories).where(:categories => {:name => cat})
-  }
+  def self.recent
+    order('date DESC').limit(5)
+  end
 end
