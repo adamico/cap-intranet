@@ -6,7 +6,6 @@ class Event < ActiveRecord::Base
 
   validates :titre, :presence => true, :uniqueness => true
 
-  # refactor this to return events starting in the 7 next days
-  scope :next, order('start_at ASC').where(:start_at => Time.now..(Time.now.midnight + 7.days))
-
+  scope :next, order('start_at ASC').
+    where(:start_at => Time.now..(Time.now.midnight + 7.days))
 end
