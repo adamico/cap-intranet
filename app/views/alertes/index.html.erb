@@ -1,16 +1,14 @@
 <% content_for :body_content_left do %>
   <div class="liste alertes">
-    <% if @alertes_annees.empty? %>
-      Pas d'alerte.
-    <% else %>
-      <% @alertes_annees.each do |annee, alertes| %>
-        <h2><%= annee.strftime("%Y") %></h2>
-        <% alertes.each do |alerte| %>
-          <p>
-            <%= l(alerte.date) %>
-            <%= link_to alerte.titre, alerte_url(alerte) %>
-          </p>
-        <% end %>
+    <% @alertes_annees.each do |annee, alertes| %>
+      <h2><%= annee.strftime("%Y") %></h2>
+      <% alertes.each do |alerte| %>
+        <p>
+          <%= l(alerte.date) %>
+          <%= link_to alerte.titre, alerte_url(alerte) %>
+          <% Categorie.all -%>
+          <% links_to_categories(alerte) %>
+        </p>
       <% end %>
     <% end %>
   </div>

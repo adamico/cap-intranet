@@ -2,10 +2,14 @@
   Choix de l'univers :
   <nav id="menu">
     <ul>
-      <% %w(cap crpv ceip).each do |univers|%>
-        <li class=<%= (params[:categorie] == univers) ? "selected" : "" %>><%= link_to univers.upcase, :categorie => univers %></li>
+      <% %w(cap crpv ceip).each do |universe|%>
+        <li class=<%= (params[:categorie] == universe) ? "selected" : "" %>>
+          <%= link_to universe.upcase, current_path(:categorie => universe, :month => @month, :year => @year) %>
+        </li>
       <% end %>
-      <li class=<%= params[:categorie] == {} ? "selected" : ""%>><%= link_to "Tous", "/#{params[:controller]}" %></li>
+      <li class=<%= params[:categorie] == {} ? "selected" : ""%>>
+        <%= link_to "Tous", polymorphic_path(params[:controller]) %>
+      </li>
     </ul>
   </nav>
 </div>

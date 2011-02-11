@@ -24,4 +24,8 @@ module ApplicationHelper
       safe_concat "<strong>Catégories : </strong>" + links.join(', ')
     end
   end
+
+  def current_path(current_params={})
+    polymorphic_path(params[:controller], current_params)
+  end
 end
