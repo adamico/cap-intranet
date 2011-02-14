@@ -4,7 +4,9 @@
 
 <% content_for :body_content_left do %>
   <section>
-    <p><%= link_to @document.source.file_name, @document.source.url %></p>
+    <% if @document.source %>
+      <p><%= link_to @document.source.file_name, @document.source.url %></p>
+    <% end %>
   </section>
 
   <section>

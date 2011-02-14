@@ -25,4 +25,3 @@ Toxnotes::Application.configure do
 end
 
 Refinery.rescue_not_found = false
-Refinery.s3_backend = false
