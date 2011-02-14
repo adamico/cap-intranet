@@ -56,22 +56,31 @@ body {
       text-decoration: none;
       color: inherit; }
 
-.documents h3 {
+.liste h2 {
+  margin-left: -10px;
+  padding: 10px;
+  color: white;
+  text-shadow: 0 1px 0 black; }
+  .liste h2 a {
+    text-decoration: none;
+    color: inherit; }
+
+.documents h2, .documents h3 {
   background: #588f08; }
 .documents span.label {
   color: #588f08; }
 
-.events h3 {
+.events h2, .events h3 {
   background: #09557a; }
 .events span.label {
   color: #09557a; }
 
-.enquetes h3 {
+.enquetes h2, .enquetes h3 {
   background: #955408; }
 .enquetes span.label {
   color: #955408; }
 
-.alertes h3 {
+.alertes h2, .alertes h3 {
   background: #890843; }
 .alertes span.label {
   color: #890843; }
@@ -92,17 +101,6 @@ p#date {
   padding: 0;
   margin: 0;
   font-weight: bold; }
-
-/* Alertes */
-.alertes h2 {
-  margin-left: -10px;
-  padding: 10px;
-  background: #873d1a;
-  color: white;
-  text-shadow: 0 1px 0 black; }
-  .alertes h2 a {
-    text-decoration: none;
-    color: inherit; }
 
 /* Universe selector */
 #universe_selector_wrap {

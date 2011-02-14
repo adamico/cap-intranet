@@ -1,5 +1,5 @@
 <% content_for :body_content_left do %>
-  <h1><%= @document.titre %></h1>
+  <h2><%= @document.titre %></h1>
   <section>
     <% if @document.source %>
       <p><%= link_to @document.source.file_name, @document.source.url %></p>
@@ -12,20 +12,20 @@
 <% end %>
 
 <% content_for :body_content_right do %>
-<aside>
-  <h2><%= t('.other') %></h2>
-  <% if @other_documents.empty? %>
-    Aucun autre document.
-  <% else %>
-    <ul id="documents">
-      <% @other_documents.each do |document| %>
-        <li>
-          <%= link_to document.titre, document_url(document) %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-</aside>
+  <aside class="liste documents">
+    <h2><%= link_to t('.other'), documents_path %></h2>
+    <% if @other_documents.empty? %>
+      Aucun autre document.
+    <% else %>
+      <div class="liste documents">
+        <% @other_documents.each do |document| %>
+          <p>
+            <%= link_to document.titre, document_url(document) %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  </aside>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
