@@ -15,6 +15,8 @@ class DocumentsController < ApplicationController
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @document in the line below:
     present(@page)
+
+    @other_documents = Document.recent.without_self(@document)
   end
 
 protected

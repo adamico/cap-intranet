@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <div class="liste documents">
+    <% @documents.each do |document| %>
+      <p>
+        <%= link_to document.titre, document_url(document) %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

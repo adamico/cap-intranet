@@ -1,8 +1,5 @@
-<% content_for :body_content_title do %>
-  <%= @document.titre %>
-<% end %>
-
 <% content_for :body_content_left do %>
+  <h1><%= @document.titre %></h1>
   <section>
     <% if @document.source %>
       <p><%= link_to @document.source.file_name, @document.source.url %></p>
@@ -17,13 +14,17 @@
 <% content_for :body_content_right do %>
 <aside>
   <h2><%= t('.other') %></h2>
-  <ul id="documents">
-    <% @documents.each do |document| %>
-      <li>
-        <%= link_to document.titre, document_url(document) %>
-      </li>
-    <% end %>
-  </ul>
+  <% if @other_documents.empty? %>
+    Aucun autre document.
+  <% else %>
+    <ul id="documents">
+      <% @other_documents.each do |document| %>
+        <li>
+          <%= link_to document.titre, document_url(document) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </aside>
 <% end %>
 

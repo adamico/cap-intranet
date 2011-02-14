@@ -7,7 +7,7 @@
 <% content_for :body_content_right do %>
   <aside class="alertes">
     <h2><%= link_to "Autres alertes", alertes_path %></h2>
-    <%= render :partial => 'alertes/recent', :locals => { :alertes => Alerte.recent} %>
+    <%= render :partial => 'alertes/recent', :locals => { :alertes => @other_alertes } %>
   </aside>
 <% end %>
 
