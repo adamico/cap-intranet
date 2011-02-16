@@ -42,5 +42,10 @@ module Toxnotes
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # refinery cms search engine
+    config.to_prepare do
+      Refinery.searchable_models = [Page, Alerte, Document, Event]
+    end
   end
 end

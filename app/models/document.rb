@@ -7,3 +7,17 @@ class Document < ActiveRecord::Base
   belongs_to :source, :class_name => 'Resource'
   scope :recent, order('created_at DESC').limit(5)
 end
+
+# == Schema Information
+#
+# Table name: documents
+#
+#  id         :integer         primary key
+#  titre      :string(255)
+#  source_id  :integer
+#  contenu    :text
+#  position   :integer
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

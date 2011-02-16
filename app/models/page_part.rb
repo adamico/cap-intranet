@@ -21,3 +21,17 @@ protected
   end
 
 end
+
+# == Schema Information
+#
+# Table name: page_parts
+#
+#  id         :integer         primary key
+#  page_id    :integer
+#  title      :string(255)
+#  body       :text
+#  position   :integer
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

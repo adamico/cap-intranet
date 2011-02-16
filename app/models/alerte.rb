@@ -9,3 +9,17 @@ class Alerte < ActiveRecord::Base
     order('date DESC').limit(5)
   end
 end
+
+# == Schema Information
+#
+# Table name: alertes
+#
+#  id         :integer         primary key
+#  titre      :string(255)
+#  date       :date
+#  contenu    :text
+#  position   :integer
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

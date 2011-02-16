@@ -288,3 +288,31 @@ class Page < ActiveRecord::Base
     $stdout.puts warning.join("\n")
   end
 end
+
+# == Schema Information
+#
+# Table name: pages
+#
+#  id                  :integer         primary key
+#  title               :string(255)
+#  parent_id           :integer
+#  position            :integer
+#  path                :string(255)
+#  created_at          :timestamp
+#  updated_at          :timestamp
+#  meta_keywords       :string(255)
+#  meta_description    :text
+#  show_in_menu        :boolean         default(TRUE)
+#  link_url            :string(255)
+#  menu_match          :string(255)
+#  deletable           :boolean         default(TRUE)
+#  custom_title        :string(255)
+#  custom_title_type   :string(255)     default("none")
+#  draft               :boolean         default(FALSE)
+#  browser_title       :string(255)
+#  skip_to_first_child :boolean         default(FALSE)
+#  lft                 :integer
+#  rgt                 :integer
+#  depth               :integer
+#
+

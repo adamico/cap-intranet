@@ -12,3 +12,20 @@ class Event < ActiveRecord::Base
       order('start_at ASC')
   end
 end
+
+# == Schema Information
+#
+# Table name: events
+#
+#  id         :integer         primary key
+#  titre      :string(255)
+#  date       :timestamp
+#  contenu    :text
+#  position   :integer
+#  created_at :timestamp
+#  updated_at :timestamp
+#  start_at   :timestamp
+#  end_at     :timestamp
+#  all_day    :boolean
+#
+

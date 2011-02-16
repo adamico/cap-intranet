@@ -43,6 +43,7 @@ GEM
       activesupport (= 3.0.4)
     activesupport (3.0.4)
     acts_as_indexed (0.6.6)
+    annotate (2.4.0)
     arel (2.0.8)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
@@ -159,6 +160,8 @@ GEM
     refinerycms-i18n (0.9.9.7)
       refinerycms (>= 0.9.8)
       routing-filter (>= 0.2.3)
+    refinerycms-search (0.9.8)
+      refinerycms (>= 0.9.8)
     routing-filter (0.2.3)
       actionpack
     rspec (2.3.0)
@@ -206,6 +209,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   autotest
   autotest-notification
   autotest-rails
@@ -230,6 +234,7 @@ DEPENDENCIES
   refinerycms-generators (~> 0.9)
   refinerycms-i18n (~> 0.9.9)
   refinerycms-memberships (~> 1.0)!
+  refinerycms-search (~> 0.9.8)
   rspec-rails (= 2.3)
   ruby-prof
   sauberia-aws-s3
