@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Toxnotes::Application.config.secret_token = '2921e8fb97bd6d4d71350dc829b171ba468c5a82e807f7c646061720691a277363ec09015512c0847e49dac8968f647a2c4c20ecb1578eb01ac3af79231a434a'
+CapIntranet::Application.config.secret_token = '5a3a8b58f240da669a480aaca82d1d73a677b066a5561d5ce7474a9c377417ce60b76c50def475ab9f9af93882c4576d9bc19660719586ac8926291dac102b50'
