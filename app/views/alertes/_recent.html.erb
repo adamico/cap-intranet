@@ -4,7 +4,7 @@
   <div class="liste alertes">
     <% for alerte in alertes -%>
       <p>
-        <span class="label"><%= l(alerte.date) %></span>
+        <span class="label"><%= l(alerte.date) rescue ""%></span>
         <%= link_to alerte.titre, alerte_url(alerte) %>
       </p>
     <% end -%>
