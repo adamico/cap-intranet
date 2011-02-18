@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110211101117) do
+ActiveRecord::Schema.define(:version => 20110218085211) do
 
   create_table "alertes", :force => true do |t|
     t.string    "titre"
@@ -27,11 +27,6 @@ ActiveRecord::Schema.define(:version => 20110211101117) do
     t.string    "name"
     t.timestamp "created_at"
     t.timestamp "updated_at"
-  end
-
-  create_table "categories_alertes", :id => false, :force => true do |t|
-    t.integer "categorie_id"
-    t.integer "alerte_id"
   end
 
   create_table "categories_items", :force => true do |t|

@@ -9,6 +9,7 @@ module Categorisable
   def with_categorie(cat)
     joins(:categories).where(:categories => {:name => cat})
   end
+  ########################
 
   module InstanceMethods
     def categorisable?
