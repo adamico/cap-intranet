@@ -70,8 +70,4 @@ capybara-*html
 # sass
 .sass-cache
 .sass-cache/*
-
-#rvm
-.rvmrc
-.rvmrc.*
-
+vendor/ruby
