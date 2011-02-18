@@ -8,7 +8,6 @@ def setup_environment
 
   # Requires supporting files with custom matchers and macros, etc,
   # in ./support/ and its subdirectories.
-  Dir[File.expand_path('../support/**/*.rb', __FILE__)].each {|f| require f}
 
   RSpec.configure do |config|
     # == Mock Framework
@@ -31,6 +30,7 @@ def setup_environment
 end
 
 def each_run
+  Dir[File.expand_path('../support/**/*.rb', __FILE__)].each {|f| require f}
 end
 
 unless RbConfig::CONFIG["host_os"] =~ %r!(msdos|mswin|djgpp|mingw)!

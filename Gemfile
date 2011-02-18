@@ -59,7 +59,7 @@ group :development, :test do
   gem 'rack-test',              '~> 0.5.6'
   gem 'json_pure'
   # Factory Girl
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem "#{'j' if RUBY_PLATFORM == 'java'}ruby-prof" unless defined?(RUBY_ENGINE) and RUBY_ENGINE == 'rbx'
   # Autotest
   gem 'autotest'
