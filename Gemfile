@@ -95,4 +95,4 @@ gem 'refinerycms-events', '1.0', :path => 'vendor/engines'
 gem 'event-calendar', :require => 'event_calendar'
 
 gem 'kronn-has_many_polymorphs'
-gem 'annotate', :require => "annotate/annotate_models"
+#gem 'annotate', :require => "annotate/annotate_models"
