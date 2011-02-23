@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @enquete.titre %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Titre</h1>
+    <p>
+      <%=raw @enquete.titre %>
+    </p>
+  </section>
+  <section>
+    <h1>Publication</h1>
+    <p>
+      <%=raw @enquete.publication %>
+    </p>
+  </section>
+  <section>
+    <h1>Contenu</h1>
+    <p>
+      <%=raw @enquete.contenu %>
+    </p>
+  </section>
+  <section>
+    <h1>State</h1>
+    <p>
+      <%=raw @enquete.state %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="enquetes">
+      <% @enquetes.each do |enquete| %>
+        <li>
+          <%= link_to enquete.titre, enquete_url(enquete) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

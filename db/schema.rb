@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110218085211) do
+ActiveRecord::Schema.define(:version => 20110223101349) do
 
   create_table "alertes", :force => true do |t|
     t.string    "titre"
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(:version => 20110218085211) do
   end
 
   add_index "documents", ["id"], :name => "index_documents_on_id"
+
+  create_table "enquetes", :force => true do |t|
+    t.string   "titre"
+    t.date     "publication"
+    t.text     "contenu"
+    t.string   "state"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "enquetes", ["id"], :name => "index_enquetes_on_id"
 
   create_table "events", :force => true do |t|
     t.string    "titre"

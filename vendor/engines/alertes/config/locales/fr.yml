@@ -14,7 +14,7 @@ fr:
         reorder: Réordonner les Alertes
         reorder_done: Fin de réordonnancement des Alertes
         sorry_no_results: "Désolé ! Aucun résultat."
-        no_items_yet: "Il n'y a actuellement aucune Alerte. Cliquer sur 'Créer une nouvelle Alert' pour en ajouter une."
+        no_items_yet: "Il n'y a actuellement aucune Alerte. Cliquer sur 'Créer une nouvelle Alerte' pour en ajouter une."
       alerte:
         view_live_html: Voir cette alerte <br/><em>(Ouvre une nouvelle fenêtre)</em>
         edit: Modifier cette Alerte

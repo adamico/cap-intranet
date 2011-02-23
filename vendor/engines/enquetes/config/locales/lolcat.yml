@@ -1,0 +1,24 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    enquetes:
+      title: Enquetes
+  admin:
+    enquetes:
+      index:
+        title: Enquetes
+        create_new: CREATE NEW Enquete
+        reorder: REORDR Enquetes
+        reorder_done: DUN REORDERIN Enquetes
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Enquetes YET. CLICK "CREATE NEW Enquete" 2 ADD UR FURST enquete.
+      enquete:
+        view_live_html: VIEW DIS enquete LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS enquete
+        delete: REMOOV DIS enquete FOREVR
+  enquetes:
+    show:
+      other: OTHR Enquetes

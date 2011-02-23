@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="enquetes">
+    <% @enquetes.each do |enquete| %>
+      <li>
+        <%= link_to enquete.titre, enquete_url(enquete) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

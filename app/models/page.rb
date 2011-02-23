@@ -289,7 +289,9 @@ class Page < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
+# Schema version: 20110223101349
 #
 # Table name: pages
 #
@@ -308,9 +310,9 @@ end
 #  deletable           :boolean         default(TRUE)
 #  custom_title        :string(255)
 #  custom_title_type   :string(255)     default("none")
-#  draft               :boolean         default(FALSE)
+#  draft               :boolean
 #  browser_title       :string(255)
-#  skip_to_first_child :boolean         default(FALSE)
+#  skip_to_first_child :boolean
 #  lft                 :integer
 #  rgt                 :integer
 #  depth               :integer

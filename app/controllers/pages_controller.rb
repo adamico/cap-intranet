@@ -12,6 +12,7 @@ class PagesController < ApplicationController
       @events = Event.next
     end
     @documents = Document.recent
+    @enquetes = Enquete.en_cours
   end
 
   # This action can be accessed normally, or as nested pages.

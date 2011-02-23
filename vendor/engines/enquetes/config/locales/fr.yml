@@ -1,0 +1,24 @@
+fr:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    enquetes:
+      title: Enquetes
+  admin:
+    enquetes:
+      index:
+        title: Enquetes
+        create_new: Créer une nouvelle Enquete
+        reorder: Réordonner les Enquetes
+        reorder_done: Fin de réordonnancement des Enquetes
+        sorry_no_results: "Désolé ! Aucun résultat."
+        no_items_yet: "Il n'y a actuellement aucune Enquete. Cliquer sur 'Créer une nouvelle Enquete' pour en ajouter une."
+      enquete:
+        view_live_html: Voir cette enquete <br/><em>(Ouvre une nouvelle fenêtre)</em>
+        edit: Modifier cette Enquete
+        delete: Supprimer définitivement cette Enquete
+  enquetes:
+    show:
+      other: Autres Enquetes

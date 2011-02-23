@@ -1,6 +1,6 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(alerte) -%>">
   <span class='date'>
-    <%= l alerte.date %>
+    <%= l alerte.date rescue "" %>
   </span>
   <span class='title'>
     <%= alerte.titre %>

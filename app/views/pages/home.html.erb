@@ -21,8 +21,18 @@
       <% end %>
     </section>
     <section class="column enquetes">
-      <h3>Enquêtes</h3>
-      En cours d'implementation!
+      <h3><%= link_to "Enquêtes", enquetes_path %></h3>
+      <% if @enquetes.empty? %>
+        Aucune enquête en cours.
+      <% else %>
+        <div class="liste">
+          <% @enquetes.each do |enquete| %>
+            <p>
+              <%= link_to enquete.titre, enquete_url(enquete) %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
     </section>
     <section class="column events">
       <h3><%= link_to "Agenda", events_path %></h3>

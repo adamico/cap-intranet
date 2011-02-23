@@ -1,3 +1,4 @@
+#encoding: utf-8
 Factory.define :alerte do |f|
   f.sequence(:titre) {|n| "alerte#{n}"}
 end
@@ -12,3 +13,11 @@ Factory.define :document do |f|
   f.sequence(:titre) {|n| "document#{n}"}
 end
 
+Factory.define :enquete do |f|
+  f.sequence(:titre) {|n| "enquete#{n}"}
+  f.state "en cours"
+end
+
+Factory.define :enquete_terminee, :parent => :enquete do |f|
+  f.state "terminée"
+end

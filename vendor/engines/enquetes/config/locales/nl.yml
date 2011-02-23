@@ -1,0 +1,20 @@
+nl:
+  plugins:
+    enquetes:
+      title: Enquetes
+  admin:
+    enquetes:
+      index:
+        title: Enquetes
+        create_new: Maak een nieuwe Enquete
+        reorder: Wijzig de volgorde van de Enquetes
+        reorder_done: Klaar met het wijzingen van de volgorde van de Enquetes
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Enquetes. Druk op 'Maak een nieuwe Enquete' om de eerste aan te maken.
+      enquete:
+        view_live_html: Bekijk deze enquete op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze enquete
+        delete: Verwijder deze enquete voor eeuwig
+  enquetes:
+    show:
+      other: Andere Enquetes
