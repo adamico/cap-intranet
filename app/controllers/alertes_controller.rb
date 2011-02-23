@@ -23,8 +23,9 @@ protected
 
   def find_all_alertes
     # Order by alerte date
-    if params[:categorie]
-      categorie = Categorie.find_by_name(params[:categorie])
+    @categorie = params[:categorie] || nil
+    if @categorie
+      categorie = Categorie.find_by_name(@categorie)
       alertes = categorie.alertes.order("date DESC").uniq
     else
       alertes = Alerte.all

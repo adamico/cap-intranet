@@ -13,8 +13,9 @@ class EventsController < ApplicationController
 
     @shown_month = Date.civil(@year, @month)
 
-    if params[:categorie]
-      categorie = Categorie.find_by_name(params[:categorie])
+    @categorie = params[:categorie] || nil
+    if @categorie
+      categorie = Categorie.find_by_name(@categorie)
       events = categorie.events.event_strips_for_month(@shown_month)
     else
       events = Event.event_strips_for_month(@shown_month)
