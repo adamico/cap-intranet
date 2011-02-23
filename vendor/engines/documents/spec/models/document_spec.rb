@@ -1,32 +1,17 @@
 require 'spec_helper'
 
 describe Document do
-
-  def reset_document(options = {})
-    @valid_attributes = {
-      :id => 1,
-      :title => "RSpec is great for testing too"
-    }
-
-    @document.destroy! if @document
-    @document = Document.create!(@valid_attributes.update(options))
+  describe "validations" do
+    it_should_behave_like "a model with a titre", "document"
   end
-
-  before(:each) do
-    reset_document
-  end
-
-  context "validations" do
-    
-    it "rejects empty titre" do
-      Document.new(@valid_attributes.merge(:titre => "")).should_not be_valid
+  describe ".recent" do
+    subject {Document}
+    it "should exist as a class method" do
+      subject.should respond_to(:recent)
     end
-
-    it "rejects non unique titre" do
-      # as one gets created before each spec by reset_document
-      Document.new(@valid_attributes).should_not be_valid
+    it "should return recent documents" do
+      10.times {|i| Factory(:document, :titre => "alerte#{i}")}
+      Document.recent.all.count.should == 5
     end
-    
   end
-
 end

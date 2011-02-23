@@ -31,6 +31,8 @@ end
 
 def each_run
   Dir[File.expand_path('../support/**/*.rb', __FILE__)].each {|f| require f}
+  require "factory_girl"
+  Factory.find_definitions
 end
 
 unless RbConfig::CONFIG["host_os"] =~ %r!(msdos|mswin|djgpp|mingw)!
