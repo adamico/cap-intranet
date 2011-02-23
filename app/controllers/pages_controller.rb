@@ -7,12 +7,13 @@ class PagesController < ApplicationController
       categorie = Categorie.find_by_name(params[:categorie])
       @alertes = categorie.alertes.recent
       @events = categorie.events.next
+      @enquetes = categorie.enquetes.en_cours
     else
       @alertes = Alerte.recent
       @events = Event.next
+      @enquetes = Enquete.en_cours
     end
     @documents = Document.recent
-    @enquetes = Enquete.en_cours
   end
 
   # This action can be accessed normally, or as nested pages.

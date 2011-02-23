@@ -1,21 +1,21 @@
 <div id="universe_selector_wrap">
-  Choix de l'univers :
+  <span>Choix de l'univers :</span>
   <nav id="menu">
     <ul>
       <% %w(cap crpv ceip).each do |universe|%>
-        <li class=<%= (params[:categorie] == universe) ? "selected" : "" %>>
+        <li class=<%= (@categorie == universe) ? "selected" : "" %>>
           <% if params[:controller] == "pages" %>
             <%= link_to universe.upcase, :categorie => universe %>
           <% else %>
-            <%= link_to universe.upcase, url_for(:categorie => universe, :month => @month, :year => @year) %>
+            <%= link_to universe.upcase, :categorie => universe, :month => @month, :year => @year, :state => @state %>
           <% end %>
         </li>
       <% end %>
-      <li class=<%= params[:categorie] == {} ? "selected" : ""%>>
+      <li class=<%= @categorie.nil? ? "selected" : ""%>>
         <% if params[:controller] == "pages" %>
           <%= link_to "Tous", root_path %>
         <% else %>
-          <%= link_to "Tous", polymorphic_path(params[:controller]) %>
+          <%= link_to "Tous", :month  => @month, :year => @year, :state => @state %>
         <% end %>
 
       </li>

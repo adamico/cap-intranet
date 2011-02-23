@@ -1,0 +1,26 @@
+<% content_for :body_content_left do %>
+  <p id="date"><%=l @enquete.publication %></p>
+  <h2><%= @enquete.titre %></h2>
+  (<%= @enquete.state %>)
+  <%=raw @enquete.contenu %>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside class="liste enquetes"e>
+    <h2><%= link_to "Autres enquêtes", enquetes_path %></h2>
+    <% if @other_enquetes.empty? -%>
+      Aucune enquête.
+    <% else %>
+      <div class="liste enquetes">
+        <% @other_enquetes.each do |enquete| %>
+          <p>
+            <span class="label"><% l(enquete.publication) rescue "" %></span>
+            <%= link_to enquete.titre, enquete_url(enquete) %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

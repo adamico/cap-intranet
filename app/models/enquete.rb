@@ -1,13 +1,17 @@
 #encoding: utf-8
 class Enquete < ActiveRecord::Base
+  is_categorisable
 
   acts_as_indexed :fields => [:titre, :contenu, :state]
 
   validates :titre, :presence => true, :uniqueness => true
 
-  STATES = ["en cours", "terminée"]
+  STATES = ["en cours", "terminee"]
   def self.en_cours
     where(:state => "en cours")
+  end
+  def self.with_state(state)
+    where(:state => state)
   end
 end
 

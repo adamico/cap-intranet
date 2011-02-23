@@ -8,6 +8,15 @@
     <%= f.label :titre -%>
     <%= f.text_field :titre, :class => 'larger widest' -%>
   </div>
+
+  <div class='field'>
+    <label for="enquete_categories">Catégories</label>
+    <% categories = Categorie.all %>
+    <% categories.each do |categorie| %>
+      <%= check_box_tag "enquete[categories_names][]", categorie.name, @enquete.categories_names.include?(categorie.name) -%>
+      <%= categorie.name.upcase -%>
+    <% end %>
+  </div>
   
   <div class='field'>
     <%= f.label :publication -%>
@@ -16,7 +25,7 @@
 
   <div class='field'>
     <%= f.label :state, "Etat" -%>
-    <%= f.select :state, [["en cours", "en cours"], ["terminée", "terminée"]] -%>
+    <%= f.select :state, [["en cours", "en cours"], ["terminee", "terminee"]] -%>
   </div>
   
   <div class='field'>

@@ -27,7 +27,8 @@ body {
 
 #menu ul {
   list-style: none;
-  padding: 0px; }
+  padding: 0px;
+  margin: 0; }
   #menu ul li {
     float: left;
     margin-right: 10px; }
@@ -105,6 +106,11 @@ p#date {
 /* Universe selector */
 #universe_selector_wrap {
   float: right; }
+  #universe_selector_wrap span {
+    float: left;
+    padding: 5px 10px; }
+  #universe_selector_wrap nav#menu {
+    float: right; }
 
 /* Footer /* */
 footer {

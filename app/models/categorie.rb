@@ -1,5 +1,5 @@
 class Categorie < ActiveRecord::Base
-  has_many_polymorphs :items, :from => [:alertes, :events]
+  has_many_polymorphs :items, :from => [:alertes, :events, :enquetes]
 end
 
 # == Schema Information
