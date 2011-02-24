@@ -3,8 +3,9 @@ class PagesController < ApplicationController
   # This action is usually accessed with the root path, normally '/'
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
-    if params[:categorie]
-      categorie = Categorie.find_by_name(params[:categorie])
+    @categorie = params[:categorie] || nil
+    if @categorie
+      categorie = Categorie.find_by_name(@categorie)
       @alertes = categorie.alertes.recent
       @events = categorie.events.next
       @enquetes = categorie.enquetes.en_cours
