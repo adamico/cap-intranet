@@ -1,0 +1,12 @@
+<h2><%= t('.recent_posts') %></h2>
+<% if news_items.empty? %>
+  Aucune actualité récente.
+<% else %>
+  <div class="liste news">
+    <% news_items.each do |item| %>
+      <p>
+        <span class="label"><%= link_to item.title, news_item_url(item) %></span>
+      </p>
+    <% end %>
+  </div>
+<% end %>

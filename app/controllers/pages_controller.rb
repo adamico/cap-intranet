@@ -15,6 +15,7 @@ class PagesController < ApplicationController
       @enquetes = Enquete.en_cours
     end
     @documents = Document.recent
+    @news_items = NewsItem.latest
   end
 
   # This action can be accessed normally, or as nested pages.

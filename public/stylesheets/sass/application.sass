@@ -71,23 +71,36 @@ $wrap_width: 1000px - $wrap_margin * 2
 
 $page_width: 1000px
 
+.wrap_last_stuff, .wrap_last_news
+  width: $wrap_width - $col_margin
+  margin: 0 $wrap_margin 0 $wrap_margin
+  overflow: hidden
+
+.wrap_last_news
+  margin-bottom: 10px
+
+.news_item_truncated
+  border-bottom: 1px dotted black
 
 .wrap_last_stuff
-  width: $wrap_width
-  margin: 0 $wrap_margin 0 $wrap_margin
+  background: #EEE
 
-.column
-  margin-right: $col_margin
-  float: left
-  width: $wrap_width/$cols - $col_margin
-  h3
-    color: white
-    text-shadow: 0 1px 0 #000000
-    text-transform: uppercase
-    text-align: center
-    a
-      text-decoration: none
-      color: inherit
+  .column
+    margin-right: $col_margin
+    float: left
+    width: $wrap_width/$cols - $col_margin
+    h3
+      color: white
+      text-shadow: 0 1px 0 #000000
+      text-transform: uppercase
+      text-align: center
+      margin-top: 0
+      a
+        text-decoration: none
+        color: inherit
+
+  .column.last
+    margin-right: 0
 
 .liste
   h2

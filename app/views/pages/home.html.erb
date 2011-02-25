@@ -1,5 +1,13 @@
 <% content_for :body_content_left do %>
-  <%=raw @page[:body] %>
+  <div class="wrap_last_news">
+    <% if @news_items.any? %>
+      <h2>Dernières actualités</h2>
+      <%= render :partial => "news_items/news_item", :collection => @news_items %>
+    <% else %>
+      <%= raw @page[:body] %> 
+    <% end %>
+  </div>
+
   <div class="wrap_last_stuff">
     <% Categorie.all -%>
     <section class="column alertes">
@@ -34,7 +42,7 @@
         </div>
       <% end %>
     </section>
-    <section class="column events">
+    <section class="column events last">
       <h3><%= link_to "Agenda", events_path %></h3>
       <% if @events.empty? %>
         Aucun événement.
