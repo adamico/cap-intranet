@@ -1,21 +1,21 @@
 <% content_for :body_content_left do %>
-  <% if @results.any? %>
-    
-    <h2>Résultats de la recherche pour '<%=h params[:query] %>'</h2>
-    <ul id="search_results">
-      <% @results.each do |result| %>
-        <li>
-          <span class='result_type'>
-            <%= result.class.to_s.titleize %>
-          </span>
-          <%= link_to raw(result.title.gsub(/(#{params[:query]})/i,'<mark>\1</mark>')), result_url(result) %>
-        </li>
-      <% end %>
-  </ul>
-  <% else %>
-    <h2>Aucun résultat pour '<%=h params[:query] %>'</h2>
-  <% end %>
-
+  <div class="wrap_news">
+    <% if @results.any? %>
+      <h2>Résultats de la recherche pour '<%=h params[:query] %>'</h2>
+      <ul id="search_results">
+        <% @results.each do |result| %>
+          <li>
+            <span class='result_type'>
+              <%= result.class.to_s.titleize %>
+            </span>
+            <%= link_to raw(result.title.gsub(/(#{params[:query]})/i,'<mark>\1</mark>')), result_url(result) %>
+          </li>
+        <% end %>
+    </ul>
+    <% else %>
+      <h2>Aucun résultat pour '<%=h params[:query] %>'</h2>
+    <% end %>
+  </div>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
