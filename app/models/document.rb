@@ -1,5 +1,8 @@
+require 'stringex'
 class Document < ActiveRecord::Base
-  acts_as_indexed :fields => [:titre, :contenu]
+
+  alias_attribute :title, :ascii_titre
+  acts_as_indexed :fields => [:ascii_titre, :ascii_contenu]
 
   validates :titre, :presence => true, :uniqueness => true
 
@@ -7,6 +10,15 @@ class Document < ActiveRecord::Base
 
   def self.recent
     order('created_at DESC').limit(5)
+  end
+
+  private
+
+  def ascii_titre
+    self.titre.to_ascii
+  end
+  def ascii_contenu
+    self.contenu.to_ascii
   end
 end
 

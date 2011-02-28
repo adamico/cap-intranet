@@ -1,8 +1,10 @@
 #encoding: utf-8
+require 'stringex'
 class Enquete < ActiveRecord::Base
   is_categorisable
 
-  acts_as_indexed :fields => [:titre, :contenu, :state]
+  alias_attribute :title, :ascii_titre
+  acts_as_indexed :fields => [:ascii_titre, :ascii_contenu], :if => Proc.new {|enquete| enquete.state == "en cours"}
 
   validates :titre, :presence => true, :uniqueness => true
 
@@ -12,6 +14,14 @@ class Enquete < ActiveRecord::Base
   end
   def self.with_state(state)
     where(:state => state)
+  end
+  private
+
+  def ascii_titre
+    self.titre.to_ascii
+  end
+  def ascii_contenu
+    self.contenu.to_ascii
   end
 end
 

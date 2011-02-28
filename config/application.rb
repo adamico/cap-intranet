@@ -46,7 +46,7 @@ module CapIntranet
 
     # refinery cms search engine
     config.to_prepare do
-      Refinery.searchable_models = [Page, Alerte, Document, Event]
+      Refinery.searchable_models = [Page, Enquete, Alerte, Document, Event]
     end
   end
 end

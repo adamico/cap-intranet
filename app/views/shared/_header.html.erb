@@ -1,9 +1,14 @@
 <h1 id='logo'>
   <%= link_to RefinerySetting.find_or_set(:site_name, "Company Name"), root_path %>
 </h1>
-<%= render :partial => "/shared/universe_selector" %>
-<%= render :partial => "/shared/menu",
-           :locals => {
-             :dom_id => 'menu',
-             :css => 'menu'
-           } -%>
+<div id="search">
+  <%= render :partial => "/shared/search" %>
+</div>
+<div id="menu_wrapper"
+  <%= render :partial => "/shared/menu",
+             :locals => {
+               :dom_id => 'menu',
+               :css => 'menu'
+             } -%>
+  <%= render :partial => "/shared/universe_selector" %>
+</div>

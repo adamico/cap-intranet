@@ -98,3 +98,5 @@ gem 'kronn-has_many_polymorphs'
 gem 'annotate'
 
 gem 'refinerycms-enquetes', '1.0', :path => 'vendor/engines'
+
+gem 'stringex'

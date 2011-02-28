@@ -25,6 +25,9 @@ body {
   width: 35%;
   border-left: 1px dotted black; }
 
+#menu_wrapper {
+  clear: both; }
+
 #menu ul {
   list-style: none;
   padding: 0px;
@@ -38,6 +41,13 @@ body {
       text-decoration: none; }
     #menu ul li.selected a, #menu ul li a:hover {
       background: #cccccc; }
+
+#logo {
+  float: left; }
+
+#search {
+  float: right;
+  margin: 0.67em 0; }
 
 /* Home */
 .wrap_last_stuff, .wrap_last_news {

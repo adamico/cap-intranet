@@ -1,7 +1,15 @@
+# encoding: utf-8
+require 'stringex'
 class Event < ActiveRecord::Base
   is_categorisable
   has_event_calendar
-  acts_as_indexed :fields => [:titre, :contenu]
+
+  def self.to_s
+    "Événement"
+  end
+
+  alias_attribute :title, :ascii_titre
+  acts_as_indexed :fields => [:ascii_titre, :ascii_contenu]
 
   validates :titre, :presence => true, :uniqueness => true
   validates :start_at, :presence => true
@@ -10,6 +18,14 @@ class Event < ActiveRecord::Base
   def self.next
     where(:start_at => Time.now..(Time.now.midnight + 7.days)).
       order('start_at ASC')
+  end
+  private
+
+  def ascii_titre
+    self.titre.to_ascii
+  end
+  def ascii_contenu
+    self.contenu.to_ascii
   end
 end
 
