@@ -26,9 +26,9 @@ protected
     @categorie = params[:categorie] || nil
     if @categorie
       categorie = Categorie.find_by_name(@categorie)
-      alertes = categorie.alertes.order("date DESC").uniq
+      alertes = categorie.alertes.order("date DESC")
     else
-      alertes = Alerte.all
+      alertes = Alerte.order("date DESC")
     end
     @alertes_annees = alertes.group_by { |a| a.date.beginning_of_year }
   end

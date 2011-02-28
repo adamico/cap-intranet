@@ -1,5 +1,5 @@
 <% content_for :body_content_left do %>
-  <div class="wrap_last_news">
+  <div class="wrap_news">
     <% if @news_items.any? %>
       <h2>Dernières actualités</h2>
       <%= render :partial => "news_items/news_item", :collection => @news_items %>
@@ -19,9 +19,10 @@
       <% if @documents.empty? %>
         Aucun document.
       <% else %>
-        <div class="liste">
+        <div class="recent">
           <% @documents.each do |document| %>
             <p>
+              <span class="label"><%= l(document.updated_at, :format => "%d %B %Y") rescue ""%></span>
               <%= link_to document.titre, document_url(document) %>
             </p>
           <% end %>
@@ -33,9 +34,10 @@
       <% if @enquetes.empty? %>
         Aucune enquête en cours.
       <% else %>
-        <div class="liste">
+        <div class="recent">
           <% @enquetes.each do |enquete| %>
             <p>
+              <span class="label"><%= l(enquete.publication, :format => :long) rescue ""%></span>
               <%= link_to enquete.titre, enquete_url(enquete) %>
             </p>
           <% end %>
@@ -47,10 +49,10 @@
       <% if @events.empty? %>
         Aucun événement.
       <% else %>
-        <div class="liste">
+        <div class="recent">
           <% @events.each do |event| %>
             <p>
-              <%= event.start_at.strftime("%d/%m/%Y") %> :
+              <span class="label"><%= l(event.start_at, :format => "%d/%m/%Y") %></span>
               <%= link_to event.titre, event_url(event) %>
             </p>
           <% end %>

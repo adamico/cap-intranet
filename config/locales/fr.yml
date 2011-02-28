@@ -1,0 +1,4 @@
+fr:
+  time:
+    formats:
+      perso: "%d %b %Y à %Hh%M"

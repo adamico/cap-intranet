@@ -1,10 +1,10 @@
 <% if alertes.empty? -%>
   Aucune alerte.
 <% else -%>
-  <div class="liste alertes">
+  <div class="recent alertes">
     <% for alerte in alertes -%>
       <p>
-        <span class="label"><%= l(alerte.date) rescue ""%></span>
+        <span class="label"><%= l(alerte.date, :format => :long) rescue ""%></span>
         <%= link_to alerte.titre, alerte_url(alerte) %>
       </p>
     <% end -%>

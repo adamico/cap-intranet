@@ -31,9 +31,19 @@ $cc5: #FAB8D6
 
 body
   background: #DDD
-  font-family: Verdana
+  font: normal 12px "Helvetica Neue", Helvetica, Arial, sans-serif
   font-size: 13px
   line-height: 18px
+
+a
+  text-decoration: none
+  background: inherit
+  color: #00E
+  &:hover
+    text-decoration: underline
+  &:visited
+    color: #00E
+
 
 #body_content_left, #body_content_right
   float: left
@@ -59,6 +69,8 @@ body
       float: left
       margin-right: 10px
       a
+        color: #000
+        text-shadow: 0 1px 0 #FFF
         display: block
         padding: 5px 10px
         text-decoration: none
@@ -67,6 +79,10 @@ body
 
 #logo
   float: left
+  text-shadow: 1px 2px 1px #FFF
+  a
+    text-decoration: none
+    color: black
 
 #search
   float: right
@@ -81,16 +97,26 @@ $wrap_width: 1000px - $wrap_margin * 2
 
 $page_width: 1000px
 
-.wrap_last_stuff, .wrap_last_news
+.wrap_last_stuff, .wrap_news
   width: $wrap_width - $col_margin
   margin: 0 $wrap_margin 0 $wrap_margin
   overflow: hidden
 
-.wrap_last_news
+.wrap_news
   margin-bottom: 10px
+  h2, h3
+    background: white
+    color: black
 
 .news_item_truncated
   border-bottom: 1px dotted black
+  a
+    color: #00E
+    &:hover
+      color: #00E
+      text-decoration: underline
+    &:visited
+      color: #00E
 
 .wrap_last_stuff
   background: #EEE
@@ -112,7 +138,60 @@ $page_width: 1000px
   .column.last
     margin-right: 0
 
+
+.column, .liste
+  p a
+    color: #000
+    &:hover
+      color: white
+      text-decoration: none
+
+.news
+  h2, h3
+    background: #222
+  p a
+    &:hover
+      background: #222
+  span.label
+    color: #222
+
+.documents
+  h2, h3
+    background: $pc3
+  p a
+    &:hover
+      background: $pc3
+  span.label
+    color: $pc3
+.events
+  h2, h3
+    background: $sca3
+  p a
+    &:hover
+      background: $sca3
+  span.label
+    color: $sca3
+.enquetes
+  h2, h3
+    background: $scb3
+  p a
+    &:hover
+      background: $scb3
+  span.label
+    color: $scb3
+.alertes
+  h2, h3
+    background: $cc3
+  p a
+    &:hover
+      background: $cc3
+  span.label
+    color: $cc3
+
 .liste
+  padding-left: 10px
+
+.liste, .recent
   h2
     margin-left: -10px
     padding: 10px
@@ -121,30 +200,6 @@ $page_width: 1000px
     a
       text-decoration: none
       color: inherit
-
-.documents
-  h2, h3
-    background: $pc3
-  span.label
-    color: $pc3
-.events
-  h2, h3
-    background: $sca3
-  span.label
-    color: $sca3
-.enquetes
-  h2, h3
-    background: $scb3
-  span.label
-    color: $scb3
-.alertes
-  h2, h3
-    background: $cc3
-  span.label
-    color: $cc3
-
-.liste
-  padding-left: 10px
   p
     border-bottom: 1px dotted black
     padding-bottom: 5px

@@ -13,7 +13,7 @@
     end
     sibling_count = roots.length - 1
 -%>
-    <nav id='<%= dom_id %>' class='<%= %W(#{css} clearfix).join(' ') %>'>
+    <nav id='<%= dom_id %>' class='<%= %W(#{css}).join(' ') %>'>
       <ul>
         <%= render :partial => "/shared/menu_branch",
                    :collection => roots,

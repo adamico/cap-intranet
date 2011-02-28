@@ -9,6 +9,7 @@ class NewsItemsController < ApplicationController
 
   def show
     # render 'show'
+    @other_news = NewsItem.latest.published.without_self(@news_item)
   end
 
 protected

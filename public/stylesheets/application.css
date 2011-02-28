@@ -8,9 +8,18 @@
 /* Complementary Color */
 body {
   background: #dddddd;
-  font-family: Verdana;
+  font: normal 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 18px; }
+
+a {
+  text-decoration: none;
+  background: inherit;
+  color: #0000ee; }
+  a:hover {
+    text-decoration: underline; }
+  a:visited {
+    color: #0000ee; }
 
 #body_content_left, #body_content_right {
   float: left;
@@ -36,6 +45,8 @@ body {
     float: left;
     margin-right: 10px; }
     #menu ul li a {
+      color: black;
+      text-shadow: 0 1px 0 white;
       display: block;
       padding: 5px 10px;
       text-decoration: none; }
@@ -43,23 +54,37 @@ body {
       background: #cccccc; }
 
 #logo {
-  float: left; }
+  float: left;
+  text-shadow: 1px 2px 1px white; }
+  #logo a {
+    text-decoration: none;
+    color: black; }
 
 #search {
   float: right;
   margin: 0.67em 0; }
 
 /* Home */
-.wrap_last_stuff, .wrap_last_news {
+.wrap_last_stuff, .wrap_news {
   width: 950px;
   margin: 0 20px 0 20px;
   overflow: hidden; }
 
-.wrap_last_news {
+.wrap_news {
   margin-bottom: 10px; }
+  .wrap_news h2, .wrap_news h3 {
+    background: white;
+    color: black; }
 
 .news_item_truncated {
   border-bottom: 1px dotted black; }
+  .news_item_truncated a {
+    color: #0000ee; }
+    .news_item_truncated a:hover {
+      color: #0000ee;
+      text-decoration: underline; }
+    .news_item_truncated a:visited {
+      color: #0000ee; }
 
 .wrap_last_stuff {
   background: #eeeeee; }
@@ -79,46 +104,67 @@ body {
   .wrap_last_stuff .column.last {
     margin-right: 0; }
 
-.liste h2 {
-  margin-left: -10px;
-  padding: 10px;
-  color: white;
-  text-shadow: 0 1px 0 black; }
-  .liste h2 a {
-    text-decoration: none;
-    color: inherit; }
+.column p a, .liste p a {
+  color: black; }
+  .column p a:hover, .liste p a:hover {
+    color: white;
+    text-decoration: none; }
+
+.news h2, .news h3 {
+  background: #222222; }
+.news p a:hover {
+  background: #222222; }
+.news span.label {
+  color: #222222; }
 
 .documents h2, .documents h3 {
+  background: #588f08; }
+.documents p a:hover {
   background: #588f08; }
 .documents span.label {
   color: #588f08; }
 
 .events h2, .events h3 {
   background: #09557a; }
+.events p a:hover {
+  background: #09557a; }
 .events span.label {
   color: #09557a; }
 
 .enquetes h2, .enquetes h3 {
+  background: #955408; }
+.enquetes p a:hover {
   background: #955408; }
 .enquetes span.label {
   color: #955408; }
 
 .alertes h2, .alertes h3 {
   background: #890843; }
+.alertes p a:hover {
+  background: #890843; }
 .alertes span.label {
   color: #890843; }
 
 .liste {
   padding-left: 10px; }
-  .liste p {
-    border-bottom: 1px dotted black;
-    padding-bottom: 5px; }
-    .liste p a {
-      display: block; }
-      .liste p a.inline {
-        display: inline; }
-    .liste p:last-child {
-      border-bottom: none; }
+
+.liste h2, .recent h2 {
+  margin-left: -10px;
+  padding: 10px;
+  color: white;
+  text-shadow: 0 1px 0 black; }
+  .liste h2 a, .recent h2 a {
+    text-decoration: none;
+    color: inherit; }
+.liste p, .recent p {
+  border-bottom: 1px dotted black;
+  padding-bottom: 5px; }
+  .liste p a, .recent p a {
+    display: block; }
+    .liste p a.inline, .recent p a.inline {
+      display: inline; }
+  .liste p:last-child, .recent p:last-child {
+    border-bottom: none; }
 
 p#date {
   padding: 0;

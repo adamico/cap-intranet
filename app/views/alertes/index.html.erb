@@ -4,7 +4,7 @@
       <h2><%= annee.strftime("%Y") %></h2>
       <% alertes.each do |alerte| %>
         <p>
-          <%= l(alerte.date) %>
+          <span class="label"><%= l(alerte.date) %></span>
           <%= link_to alerte.titre, alerte_url(alerte) %>
           <% Categorie.all -%>
           <% links_to_categories(alerte) %>

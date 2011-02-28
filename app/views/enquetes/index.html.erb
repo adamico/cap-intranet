@@ -15,7 +15,7 @@
       <h2 style="clear:left;"><%= annee.strftime("%Y") %></h2>
       <% enquetes.each do |enquete| %>
         <p>
-          <%= l(enquete.publication) %>
+          <span class="label"><%= l(enquete.publication, :format => :long) %></span>
           <%= link_to enquete.titre, enquete_url(enquete) %>
           <% Categorie.all -%>
           <% links_to_categories(enquete) %>
