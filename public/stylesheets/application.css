@@ -49,6 +49,7 @@ a {
       text-shadow: 0 1px 0 white;
       display: block;
       padding: 5px 10px;
+      font-weight: bold;
       text-decoration: none; }
     #menu ul li.selected a, #menu ul li a:hover {
       background: #cccccc; }
