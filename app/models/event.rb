@@ -4,10 +4,6 @@ class Event < ActiveRecord::Base
   is_categorisable
   has_event_calendar
 
-  def self.to_s
-    "Événement"
-  end
-
   alias_attribute :title, :ascii_titre
   acts_as_indexed :fields => [:ascii_titre, :ascii_contenu]
 

@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   before_filter :find_all_events
   before_filter :find_page
 

@@ -1,5 +1,5 @@
 module Categorisable
-  # this are class methods
+  # these are class methods
   def is_categorisable
     attr_writer :categories_names
     after_save :assign_categories
