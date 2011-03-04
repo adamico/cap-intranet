@@ -15,6 +15,8 @@ class Blog::PostsController < BlogController
   def show
     @blog_comment = BlogComment.new
 
+    @other_blog_posts = @blog_posts.without_self(@blog_post)
+
     respond_with (@blog_post) do |format|
       format.html { present(@page) }
       format.js { render :partial => 'post', :layout => false }
