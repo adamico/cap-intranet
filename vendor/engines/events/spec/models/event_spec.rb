@@ -1,10 +1,14 @@
 require 'spec_helper'
+require 'stringex'
 
 describe Event do
   it_should_behave_like "a categorisable model", Factory.build(:event)
   context "validations" do
-    it_should_behave_like "a model with a titre", "event"
     subject {Factory.build(:event)}
+    it "rejects empty titre" do
+      subject.titre = ""
+      subject.should_not be_valid
+    end
     it "rejects nil start_at" do
       subject.start_at = nil
       subject.should_not be_valid
