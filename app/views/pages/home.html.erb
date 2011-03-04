@@ -1,8 +1,7 @@
 <% content_for :body_content_left do %>
   <div class="wrap_news">
-    <% if @news_items.any? %>
-      <h2>Dernières actualités</h2>
-      <%= render :partial => "news_items/news_item", :collection => @news_items %>
+    <% if @blog_posts.any? %>
+      <%= render :partial => "/blog/shared/post", :collection => @blog_posts %>
     <% else %>
       <%= raw @page[:body] %> 
     <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224071207) do
+ActiveRecord::Schema.define(:version => 20110304102332) do
 
   create_table "alertes", :force => true do |t|
     t.string    "titre"
@@ -22,6 +22,46 @@ ActiveRecord::Schema.define(:version => 20110224071207) do
   end
 
   add_index "alertes", ["id"], :name => "index_alertes_on_id"
+
+  create_table "blog_categories", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blog_categories", ["id"], :name => "index_blog_categories_on_id"
+
+  create_table "blog_categories_blog_posts", :id => false, :force => true do |t|
+    t.integer "blog_category_id"
+    t.integer "blog_post_id"
+  end
+
+  add_index "blog_categories_blog_posts", ["blog_category_id", "blog_post_id"], :name => "index_blog_categories_blog_posts_on_bc_and_bp"
+
+  create_table "blog_comments", :force => true do |t|
+    t.integer  "blog_post_id"
+    t.boolean  "spam"
+    t.string   "name"
+    t.string   "email"
+    t.text     "body"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blog_comments", ["id"], :name => "index_blog_comments_on_id"
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "draft"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "blog_posts", ["id"], :name => "index_blog_posts_on_id"
 
   create_table "categories", :force => true do |t|
     t.string    "name"
@@ -83,16 +123,6 @@ ActiveRecord::Schema.define(:version => 20110224071207) do
     t.string    "image_uid"
     t.string    "image_ext"
   end
-
-  create_table "news_items", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "publish_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "news_items", ["id"], :name => "index_news_items_on_id"
 
   create_table "page_part_translations", :force => true do |t|
     t.integer   "page_part_id"

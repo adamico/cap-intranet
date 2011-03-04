@@ -182,10 +182,14 @@ p#date {
     float: right; }
 
 /* Footer /* */
-footer {
+footer.page {
   width: 100%;
   background: black;
   margin: 0;
   padding: 18px;
   height: 54px;
   color: white; }
+
+/* Blog posts */
+.wrap_news article.blog_post {
+  border-bottom: 1px dotted black; }

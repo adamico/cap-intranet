@@ -9,13 +9,14 @@ class PagesController < ApplicationController
       @alertes = categorie.alertes.recent
       @events = categorie.events.next
       @enquetes = categorie.enquetes.en_cours
+      @blog_posts = BlogPost.with_blog_categorie(@categorie).live.recent.includes(:comments, :categories)
     else
       @alertes = Alerte.recent
       @events = Event.next
       @enquetes = Enquete.en_cours
+      @blog_posts = BlogPost.live.recent.includes(:comments, :categories)
     end
     @documents = Document.recent
-    @news_items = NewsItem.latest
   end
 
   # This action can be accessed normally, or as nested pages.
