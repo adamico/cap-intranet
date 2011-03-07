@@ -1,5 +1,5 @@
 <% content_for :body_content_left do %>
-  <h2>Articles classés dans la catégorie CAP</h2>
+  <h2>Articles classés dans la catégorie <%= @category.title.upcase %></h2>
   <% if @category.posts.any? %>
   <article id="blog_posts">
     <%= render :partial => "/blog/shared/post", :collection => @category.posts %>
