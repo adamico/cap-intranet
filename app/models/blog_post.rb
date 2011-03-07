@@ -41,11 +41,13 @@ class BlogPost < ActiveRecord::Base
   end
 
   def next
-    BlogPost.next(self).first
+    object = BlogPost.next(self).first
+    return object unless object === self
   end
 
   def prev
-    BlogPost.previous(self).first
+    object = BlogPost.previous(self).first
+    return object unless object === self
   end
 
   def live?
