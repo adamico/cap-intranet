@@ -16,21 +16,9 @@
 <% end %>
 
 <% content_for :body_content_right do %>
-<aside>
-  <h2>Prochains événements</h2>
-  <% @events.reject! { |event| event === @event } %>
-  <% if @events.empty? %>
-    Aucun événement.
-  <% else %>
-    <div id="events">
-      <% @events.each do |event| %>
-        <p>
-          <%= event.start_at.strftime("%d/%m/%Y") %> :
-          <%= link_to event.titre, event_url(event) %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
+<aside class="liste events">
+  <h2><%= link_to "Prochains événements", events_path %></h2>
+  <%= render 'next_events', :events => @other_events %>
 </aside>
 <% end %>
 

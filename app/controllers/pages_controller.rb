@@ -6,17 +6,17 @@ class PagesController < ApplicationController
     @categorie = params[:categorie] || nil
     if @categorie
       categorie = Categorie.find_by_name(@categorie)
-      @alertes = categorie.alertes.recent
-      @events = categorie.events.next
-      @enquetes = categorie.enquetes.en_cours
-      @blog_posts = BlogPost.with_blog_categorie(@categorie).live.recent.includes(:comments, :categories)
+      @recent_alertes = categorie.alertes.recent
+      @next_events = categorie.events.next
+      @enquetes_en_cours = categorie.enquetes.en_cours
+      @recent_blog_posts = BlogPost.with_blog_categorie(@categorie).live.recent.includes(:comments, :categories)
     else
-      @alertes = Alerte.recent
-      @events = Event.next
-      @enquetes = Enquete.en_cours
-      @blog_posts = BlogPost.live.recent.includes(:comments, :categories)
+      @recent_alertes = Alerte.recent
+      @next_events = Event.next
+      @enquetes_en_cours = Enquete.en_cours
+      @recent_blog_posts = BlogPost.live.recent.includes(:comments, :categories)
     end
-    @documents = Document.recent
+    @recent_documents = Document.recent
   end
 
   # This action can be accessed normally, or as nested pages.

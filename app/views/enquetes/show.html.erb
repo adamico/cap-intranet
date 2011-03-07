@@ -8,18 +8,7 @@
 <% content_for :body_content_right do %>
   <aside class="liste enquetes"e>
     <h2><%= link_to "Autres enquêtes", enquetes_path %></h2>
-    <% if @other_enquetes.empty? -%>
-      Aucune enquête.
-    <% else %>
-      <div class="liste enquetes">
-        <% @other_enquetes.each do |enquete| %>
-          <p>
-            <span class="label"><% l(enquete.publication) rescue "" %></span>
-            <%= link_to enquete.titre, enquete_url(enquete) %>
-          </p>
-        <% end %>
-      </div>
-    <% end %>
+    <%= render 'recent', :enquetes => @other_enquetes %>
   </aside>
 <% end %>
 

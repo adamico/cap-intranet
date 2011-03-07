@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  before_filter :find_all_events
   before_filter :find_page
 
   def index
@@ -29,6 +28,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @other_events = Event.next.without_self(@event)
 
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
@@ -36,10 +36,6 @@ class EventsController < ApplicationController
   end
 
 protected
-
-  def find_all_events
-    @events = Event.next
-  end
 
   def find_page
     @page = Page.find_by_link_url("/events")

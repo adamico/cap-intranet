@@ -1,62 +1,29 @@
 <% content_for :body_content_left do %>
-  <div class="wrap_news">
-    <% if @blog_posts.any? %>
-      <%= render :partial => "/blog/shared/post", :collection => @blog_posts %>
+  <section class="wrap_blog">
+    <% if @recent_blog_posts.any? %>
+      <%= render :partial => "/blog/shared/post", :collection => @recent_blog_posts %>
     <% else %>
       <%= raw @page[:body] %> 
     <% end %>
-  </div>
+  </section>
 
   <div class="wrap_last_stuff">
     <% Categorie.all -%>
     <section class="column alertes">
       <h3><%= link_to "Alertes", alertes_path %></h3>
-      <%= render :partial => 'alertes/recent', :locals => { :alertes => @alertes} %>
+      <%= render 'alertes/recent', :alertes => @recent_alertes %>
     </section>
     <section class="column documents">
       <h3><%= link_to "Documents", documents_path %></h3>
-      <% if @documents.empty? %>
-        Aucun document.
-      <% else %>
-        <div class="recent">
-          <% @documents.each do |document| %>
-            <p>
-              <span class="label"><%= l(document.updated_at, :format => "%d %B %Y") rescue ""%></span>
-              <%= link_to document.titre, document_url(document) %>
-            </p>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render 'documents/recent', :documents => @recent_documents %>
     </section>
     <section class="column enquetes">
       <h3><%= link_to "Enquêtes", enquetes_path %></h3>
-      <% if @enquetes.empty? %>
-        Aucune enquête en cours.
-      <% else %>
-        <div class="recent">
-          <% @enquetes.each do |enquete| %>
-            <p>
-              <span class="label"><%= l(enquete.publication, :format => :long) rescue ""%></span>
-              <%= link_to enquete.titre, enquete_url(enquete) %>
-            </p>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render 'enquetes/recent', :enquetes => @enquetes_en_cours%>
     </section>
     <section class="column events last">
       <h3><%= link_to "Agenda", events_path %></h3>
-      <% if @events.empty? %>
-        Aucun événement.
-      <% else %>
-        <div class="recent">
-          <% @events.each do |event| %>
-            <p>
-              <span class="label"><%= l(event.start_at, :format => "%d/%m/%Y") %></span>
-              <%= link_to event.titre, event_url(event) %>
-            </p>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render 'events/next_events', :events => @next_events %>
     </section>
   </div>
 <% end %>

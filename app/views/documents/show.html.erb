@@ -14,17 +14,7 @@
 <% content_for :body_content_right do %>
   <aside class="liste documents">
     <h2><%= link_to t('.other'), documents_path %></h2>
-    <% if @other_documents.empty? %>
-      Aucun autre document.
-    <% else %>
-      <div class="liste documents">
-        <% @other_documents.each do |document| %>
-          <p>
-            <%= link_to document.titre, document_url(document) %>
-          </p>
-        <% end %>
-      </div>
-    <% end %>
+    <%= render 'recent', :documents => @other_documents %>
   </aside>
 <% end %>
 

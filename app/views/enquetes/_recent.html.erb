@@ -1,0 +1,12 @@
+<% if enquetes.empty? %>
+  Aucune enquête en cours.
+<% else %>
+  <div class="recent enquetes">
+    <% enquetes.each do |enquete| %>
+      <p>
+        <span class="label"><%= l(enquete.publication, :format => :long) rescue ""%></span>
+        <%= link_to enquete.titre, enquete_url(enquete) %>
+      </p>
+    <% end %>
+  </div>
+<% end %>

@@ -28,10 +28,10 @@ a {
   padding: 20px; }
 
 #body_content_left {
-  width: 55%; }
+  width: 600px; }
 
 #body_content_right {
-  width: 35%;
+  width: 319px;
   border-left: 1px dotted black; }
 
 #menu_wrapper {
@@ -43,16 +43,28 @@ a {
   margin: 0; }
   #menu ul li {
     float: left;
-    margin-right: 10px; }
+    margin-right: 2px; }
     #menu ul li a {
-      color: black;
-      text-shadow: 0 1px 0 white;
+      color: white;
+      text-shadow: 0 1px 0 black;
+      background: #777777;
       display: block;
       padding: 5px 10px;
       font-weight: bold;
-      text-decoration: none; }
+      text-decoration: none;
+      border-radius-top: 5px;
+      -moz-border-radius-topleft: 5px;
+      -moz-border-radius-topright: 5px;
+      -webkit-border-top-left-radius: 5px;
+      -webkit-border-top-right-radius: 5px;
+      border-top-left-radius: 5px 5px;
+      border-top-right-radius: 5px 5px; }
     #menu ul li.selected a, #menu ul li a:hover {
-      background: #cccccc; }
+      background: white;
+      color: black;
+      text-shadow: 0 1px 0 white; }
+    #menu ul li:last-child {
+      margin-right: 0px; }
 
 #logo {
   float: left;
@@ -66,16 +78,18 @@ a {
   margin: 0.67em 0; }
 
 /* Home */
-.wrap_last_stuff, .wrap_news {
+.wrap_last_stuff, .wrap_blog {
   width: 950px;
   margin: 0 20px 0 20px;
   overflow: hidden; }
 
-.wrap_news {
+.wrap_blog {
   margin-bottom: 10px; }
-  .wrap_news h2, .wrap_news h3 {
+  .wrap_blog h2, .wrap_blog h3 {
     background: white;
     color: black; }
+  .wrap_blog article.blog_post {
+    border-bottom: 1px dotted black; }
 
 .news_item_truncated {
   border-bottom: 1px dotted black; }
@@ -191,5 +205,33 @@ footer.page {
   color: white; }
 
 /* Blog posts */
-.wrap_news article.blog_post {
-  border-bottom: 1px dotted black; }
+.blog_post details {
+  font-style: italic;
+  font-size: smaller; }
+.blog_post time.posted_at {
+  display: inline; }
+
+#menu.alertes {
+  overflow: auto;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  background: black; }
+  #menu.alertes ul li a {
+    color: white;
+    text-shadow: 0 1px 0 #333333;
+    background: black;
+    border-radius-top: 0;
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-left-radius: 0 0;
+    border-top-right-radius: 0 0; }
+  #menu.alertes ul li.selected a, #menu.alertes ul li a:hover {
+    background: white;
+    color: black;
+    text-shadow: 0 1px 0 white; }
+
+.no_alertes {
+  padding-top: 15px;
+  clear: left; }

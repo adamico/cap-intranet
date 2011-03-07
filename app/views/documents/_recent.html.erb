@@ -1,0 +1,12 @@
+<% if documents.empty? %>
+  Aucun document.
+<% else %>
+  <div class="recent documents">
+    <% documents.each do |document| %>
+      <p>
+        <span class="label"><%= l(document.updated_at, :format => "%d %B %Y") rescue ""%></span>
+        <%= link_to document.titre, document_url(document) %>
+      </p>
+    <% end %>
+  </div>
+<% end %>

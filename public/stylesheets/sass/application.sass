@@ -52,9 +52,9 @@ a
   padding: 20px
 
 #body_content_left
-  width: 55%
+  width: 600px
 #body_content_right
-  width: 35%
+  width: 319px
   border-left: 1px dotted black
 
 #menu_wrapper
@@ -67,16 +67,28 @@ a
     margin: 0
     li
       float: left
-      margin-right: 10px
+      margin-right: 2px
       a
-        color: #000
-        text-shadow: 0 1px 0 #FFF
+        color: white
+        text-shadow: 0 1px 0 black
+        background: #777
         display: block
         padding: 5px 10px
         font-weight: bold
         text-decoration: none
+        border-radius-top: 5px
+        -moz-border-radius-topleft: 5px
+        -moz-border-radius-topright: 5px
+        -webkit-border-top-left-radius: 5px
+        -webkit-border-top-right-radius: 5px
+        border-top-left-radius: 5px 5px
+        border-top-right-radius: 5px 5px
       &.selected a, a:hover
-        background: #CCC
+        background: #FFF
+        color: black
+        text-shadow: 0 1px 0 white
+      &:last-child
+        margin-right: 0px
 
 #logo
   float: left
@@ -98,17 +110,20 @@ $wrap_width: 1000px - $wrap_margin * 2
 
 $page_width: 1000px
 
-.wrap_last_stuff, .wrap_news
+.wrap_last_stuff, .wrap_blog
   width: $wrap_width - $col_margin
   margin: 0 $wrap_margin 0 $wrap_margin
   overflow: hidden
 
-.wrap_news
+.wrap_blog
   margin-bottom: 10px
   h2, h3
     background: white
     color: black
+  article.blog_post
+    border-bottom: 1px dotted black
 
+// unused?
 .news_item_truncated
   border-bottom: 1px dotted black
   a
@@ -121,7 +136,6 @@ $page_width: 1000px
 
 .wrap_last_stuff
   background: #EEE
-
   .column
     margin-right: $col_margin
     float: left
@@ -135,7 +149,6 @@ $page_width: 1000px
       a
         text-decoration: none
         color: inherit
-
   .column.last
     margin-right: 0
 
@@ -239,6 +252,39 @@ footer.page
 
 /* Blog posts */
 
-.wrap_news
-  article.blog_post
-    border-bottom: 1px dotted black
+.blog_post
+  details
+    font-style: italic
+    font-size: smaller
+  time.posted_at
+    display: inline
+
+// alertes
+#menu.alertes
+  overflow: auto
+  border-bottom: 1px solid black
+  border-top: 1px solid black
+  background: black
+  ul
+    li
+      a
+        color: white
+        text-shadow: 0 1px 0 #333
+        background: black
+        border-radius-top: 0
+        -moz-border-radius-topleft: 0
+        -moz-border-radius-topright: 0
+        -webkit-border-top-left-radius: 0
+        -webkit-border-top-right-radius: 0
+        border-top-left-radius: 0 0
+        border-top-right-radius: 0 0
+      &.selected a, a:hover
+        background: #FFF
+        color: black
+        text-shadow: 0 1px 0 white
+
+.no_alertes
+  padding-top: 15px
+  clear: left
+
+

@@ -1,0 +1,12 @@
+<% if events.empty? %>
+  Aucun événement.
+<% else %>
+  <div class="recent events">
+    <% events.each do |event| %>
+      <p>
+        <span class="label"><%= l(event.start_at, :format => "%d/%m/%Y") %></span>
+        <%= link_to event.titre, event_url(event) %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
