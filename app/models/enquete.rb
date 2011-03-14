@@ -1,6 +1,7 @@
 #encoding: utf-8
 require 'stringex'
 class Enquete < ActiveRecord::Base
+  is_asciiable
   is_categorisable
 
   alias_attribute :title, :ascii_titre
@@ -14,14 +15,6 @@ class Enquete < ActiveRecord::Base
   end
   def self.with_state(state)
     where(:state => state)
-  end
-  private
-
-  def ascii_titre
-    self.titre.to_ascii
-  end
-  def ascii_contenu
-    self.contenu.to_ascii
   end
 end
 

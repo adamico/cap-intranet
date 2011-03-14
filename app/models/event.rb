@@ -2,6 +2,7 @@
 require 'stringex'
 class Event < ActiveRecord::Base
   is_categorisable
+  is_asciiable
   has_event_calendar
 
   alias_attribute :title, :ascii_titre
@@ -14,14 +15,6 @@ class Event < ActiveRecord::Base
   def self.next
     where(:start_at => Time.now..(Time.now.midnight + 7.days)).
       order('start_at ASC')
-  end
-  private
-
-  def ascii_titre
-    self.titre.to_ascii
-  end
-  def ascii_contenu
-    self.contenu.to_ascii
   end
 end
 

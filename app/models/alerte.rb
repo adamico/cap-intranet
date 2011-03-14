@@ -1,6 +1,7 @@
 require 'stringex'
 class Alerte < ActiveRecord::Base
   is_categorisable
+  is_asciiable
 
   alias_attribute :title, :ascii_titre
   acts_as_indexed :fields => [:ascii_titre, :ascii_contenu]
@@ -9,14 +10,6 @@ class Alerte < ActiveRecord::Base
 
   def self.recent
     order('date DESC').limit(5)
-  end
-  private
-
-  def ascii_titre
-    self.titre.to_ascii
-  end
-  def ascii_contenu
-    self.contenu.to_ascii
   end
 end
 

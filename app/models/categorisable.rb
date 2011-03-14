@@ -18,6 +18,7 @@ module Categorisable
     def categories_names
       @categories_names || categories.map(&:name)
     end
+
     private
 
     def assign_categories
