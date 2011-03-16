@@ -1,4 +1,3 @@
-#encoding: utf-8
 Factory.define :alerte do |f|
   f.sequence(:titre) {|n| "alerte#{n}"}
 end
@@ -19,5 +18,5 @@ Factory.define :enquete do |f|
 end
 
 Factory.define :enquete_terminee, :parent => :enquete do |f|
-  f.state "terminée"
+  f.state "terminee"
 end

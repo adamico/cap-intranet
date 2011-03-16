@@ -22,13 +22,12 @@ class AlertesController < ApplicationController
 protected
 
   def find_all_alertes
-    # Order by alerte date
     @categorie = params[:categorie] || nil
     if @categorie
       categorie = Categorie.find_by_name(@categorie)
-      alertes = categorie.alertes.order("date DESC")
+      alertes = categorie.alertes
     else
-      alertes = Alerte.order("date DESC")
+      alertes = Alerte.all
     end
     @alertes_annees = alertes.group_by { |a| a.date.beginning_of_year }
   end

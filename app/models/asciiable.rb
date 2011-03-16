@@ -1,3 +1,4 @@
+require 'stringex'
 module Asciiable
   # these are class methods
   def is_asciiable
@@ -6,6 +7,9 @@ module Asciiable
   ########################
 
   module InstanceMethods
+    def asciiable?
+      true
+    end
     private
 
     def ascii_titre

@@ -1,4 +1,3 @@
-require 'stringex'
 class Alerte < ActiveRecord::Base
   is_categorisable
   is_asciiable
@@ -8,8 +7,9 @@ class Alerte < ActiveRecord::Base
 
   validates :titre, :presence => true, :uniqueness => true
 
+  default_scope order("date DESC")
   def self.recent
-    order('date DESC').limit(5)
+    limit(5)
   end
 end
 

@@ -1,5 +1,3 @@
-#encoding: utf-8
-require 'stringex'
 class Enquete < ActiveRecord::Base
   is_asciiable
   is_categorisable
@@ -10,6 +8,8 @@ class Enquete < ActiveRecord::Base
   validates :titre, :presence => true, :uniqueness => true
 
   STATES = ["en cours", "terminee"]
+
+  default_scope order("publication DESC")
   def self.en_cours
     where(:state => "en cours")
   end

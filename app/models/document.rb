@@ -1,4 +1,3 @@
-require 'stringex'
 class Document < ActiveRecord::Base
   is_asciiable
 
@@ -9,8 +8,10 @@ class Document < ActiveRecord::Base
 
   belongs_to :source, :class_name => 'Resource'
 
+  default_scope order('created_at DESC')
+
   def self.recent
-    order('created_at DESC').limit(5)
+    limit(5)
   end
 end
 

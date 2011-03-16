@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'stringex'
 
 describe Event do
   it_should_behave_like "a categorisable model", Factory.build(:event)
+  it_should_behave_like "an asciiable model", Factory.build(:event)
   context "validations" do
     subject {Factory.build(:event)}
     it "rejects empty titre" do
@@ -17,6 +17,12 @@ describe Event do
       subject.end_at = nil
       subject.should_not be_valid
     end
+  end
+  it "should have a default scope ordering by start_at field" do
+    ordered_events = [].tap do |events|
+      events << Factory(:event)
+    end
+    Event.first.should === ordered_events.last
   end
   describe ".next" do
     subject {Event}

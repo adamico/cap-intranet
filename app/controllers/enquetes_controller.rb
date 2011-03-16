@@ -25,9 +25,9 @@ protected
     @categorie = params[:categorie] || nil
     if @categorie
       categorie = Categorie.find_by_name(@categorie)
-      enquetes = categorie.enquetes.order("publication DESC")
+      enquetes = categorie.enquetes
     else
-      enquetes = Enquete.order("publication DESC")
+      enquetes = Enquete.all
     end
     @state = params[:state] || nil
     if @state
