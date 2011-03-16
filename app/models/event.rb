@@ -1,5 +1,3 @@
-# encoding: utf-8
-require 'stringex'
 class Event < ActiveRecord::Base
   is_categorisable
   is_asciiable
