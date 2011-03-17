@@ -1,11 +1,14 @@
 <% content_for :body_content_left do %>
   <div class="liste documents">
-    <% if @documents.any? %>
-      <% @documents.each do |document| %>
-        <p>
-          <span class="label"><%= l(document.updated_at, :format => "%d %B %Y") %></span>
-          <%= link_to document.titre, document_url(document) %>
-        </p>
+    <% if @documents_annees.any? %>
+      <% @documents_annees.each do |annee, documents| %>
+        <h2><%= annee.strftime("%Y") %></h2>
+        <% documents.each do |document| %>
+          <p>
+            <span class="label"><%= l(document.updated_at, :format => "%d %B") %></span>
+            <%= link_to document.titre, document_url(document) %>
+          </p>
+        <% end %>
       <% end %>
     <% else %>
       Aucun document.

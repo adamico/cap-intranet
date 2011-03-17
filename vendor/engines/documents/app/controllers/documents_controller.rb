@@ -22,7 +22,8 @@ class DocumentsController < ApplicationController
 protected
 
   def find_all_documents
-    @documents = Document.find(:all, :order => "position ASC")
+    documents = Document.all
+    @documents_annees = documents.group_by { |d| d.created_at.beginning_of_year }
   end
 
   def find_page
