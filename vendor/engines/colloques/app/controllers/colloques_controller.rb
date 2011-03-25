@@ -15,12 +15,14 @@ class ColloquesController < ApplicationController
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @colloque in the line below:
     present(@page)
+
+    @other_colloques = Colloque.same_year(@colloque)
   end
 
 protected
 
   def find_all_colloques
-    @colloques = Colloque.find(:all, :order => "position ASC")
+    @colloques_annees = Colloque.grouped_by_year
   end
 
   def find_page

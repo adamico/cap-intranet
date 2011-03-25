@@ -125,6 +125,13 @@ a {
     color: white;
     text-decoration: none; }
 
+.colloques h2, .colloques h3 {
+  background: black; }
+.colloques p a:hover {
+  background: black; }
+.colloques span.label {
+  color: black; }
+
 .news h2, .news h3 {
   background: #222222; }
 .news p a:hover {

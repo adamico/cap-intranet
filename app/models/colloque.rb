@@ -4,6 +4,20 @@ class Colloque < ActiveRecord::Base
   validates :title, :presence => true, :uniqueness => true
 
   belongs_to :event
+
+  def date
+    if event
+      self.event.start_at.to_date
+    end
+  end
+
+  def self.same_year(instance)
+    grouped_by_year[instance.date.beginning_of_year].without_self(instance).sort_by {|colloque| colloque.event.start_at}
+  end
+
+  def self.grouped_by_year
+    all.group_by {|c| c.event.start_at.to_date.beginning_of_year}
+  end
 end
 
 # == Schema Information

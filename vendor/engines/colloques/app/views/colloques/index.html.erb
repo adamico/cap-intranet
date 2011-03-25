@@ -1,11 +1,19 @@
 <% content_for :body_content_left do %>
-  <ul id="colloques">
-    <% @colloques.each do |colloque| %>
-      <li>
-        <%= link_to colloque.title, colloque_url(colloque) %>
-      </li>
+  <div class="liste colloques">
+    <% if @colloques_annees.any? %>
+      <% @colloques_annees.each do |annee, colloques| %>
+        <h2><%= annee.strftime("%Y") %></h2>
+        <% colloques.sort_by{|c| c.event.start_at}.each do |colloque| -%>
+          <p>
+            <span class="label"><%= l(colloque.event.start_at.to_date, :format => "%d %B") %></span>
+            <%= link_to colloque.title, colloque_url(colloque) %>
+          </p>
+        <% end %>
+      <% end %>
+    <% else %>
+      Aucun colloque.
     <% end %>
-  </ul>
+  </div>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>

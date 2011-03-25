@@ -1,0 +1,12 @@
+<% if colloques.empty? %>
+  Aucun colloque.
+<% else %>
+  <div class="other colloques">
+    <% colloques.each do |colloque| %>
+      <p>
+        <span class="label"><%= l(alerte.event.start_at.to_date, :format => :long) rescue "" %></span>
+        <%= link_to colloque.title, colloque_url(colloque) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
