@@ -1,0 +1,24 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    colloques:
+      title: Colloques
+  admin:
+    colloques:
+      index:
+        title: Colloques
+        create_new: CREATE NEW Colloque
+        reorder: REORDR Colloques
+        reorder_done: DUN REORDERIN Colloques
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Colloques YET. CLICK "CREATE NEW Colloque" 2 ADD UR FURST colloque.
+      colloque:
+        view_live_html: VIEW DIS colloque LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS colloque
+        delete: REMOOV DIS colloque FOREVR
+  colloques:
+    show:
+      other: OTHR Colloques

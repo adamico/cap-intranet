@@ -12,6 +12,10 @@ class Event < ActiveRecord::Base
 
   default_scope order("start_at DESC")
 
+  def titre_with_date
+    "#{self.titre} - #{self.start_at.to_date.strftime("%d/%m/%Y")}"
+  end
+
   def self.next
     where(:start_at => Time.now..(Time.now.midnight + 7.days)).
       order('start_at ASC')

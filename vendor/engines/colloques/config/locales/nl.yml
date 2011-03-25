@@ -1,0 +1,20 @@
+nl:
+  plugins:
+    colloques:
+      title: Colloques
+  admin:
+    colloques:
+      index:
+        title: Colloques
+        create_new: Maak een nieuwe Colloque
+        reorder: Wijzig de volgorde van de Colloques
+        reorder_done: Klaar met het wijzingen van de volgorde van de Colloques
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Colloques. Druk op 'Maak een nieuwe Colloque' om de eerste aan te maken.
+      colloque:
+        view_live_html: Bekijk deze colloque op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze colloque
+        delete: Verwijder deze colloque voor eeuwig
+  colloques:
+    show:
+      other: Andere Colloques

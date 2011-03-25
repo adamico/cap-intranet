@@ -3,12 +3,12 @@
     :object => @document,
     :include_object_name => true
   } %>
-  
+
   <div class='field'>
     <%= f.label :titre -%>
     <%= f.text_field :titre, :class => 'larger widest' -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :source -%>
 
@@ -18,12 +18,12 @@
       :resource => @document.source,
     } %>
   </div>
-  
+
   <div class='field'>
     <%= f.label :contenu -%>
     <%= f.text_area :contenu, :rows => 20, :class => 'wymeditor widest' -%>
   </div>
-  
+
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,

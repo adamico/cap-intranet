@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    colloques:
+      title: Colloques
+  admin:
+    colloques:
+      index:
+        title: Colloques
+        create_new: Lag en ny Colloque
+        reorder: Endre rekkefølgen på Colloques
+        reorder_done: Ferdig å endre rekkefølgen Colloques
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Colloques enda. Klikk på "Lag en ny Colloque" for å legge til din første colloque.
+      colloque:
+        view_live_html: Vis hvordan denne colloque ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne colloque
+        delete: Fjern denne colloque permanent
+  colloques:
+    show:
+      other: Andre Colloques

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110304102332) do
+ActiveRecord::Schema.define(:version => 20110325094353) do
 
   create_table "alertes", :force => true do |t|
     t.string    "titre"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(:version => 20110304102332) do
   add_index "alertes", ["id"], :name => "index_alertes_on_id"
 
   create_table "blog_categories", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "blog_categories", ["id"], :name => "index_blog_categories_on_id"
@@ -39,26 +39,26 @@ ActiveRecord::Schema.define(:version => 20110304102332) do
   add_index "blog_categories_blog_posts", ["blog_category_id", "blog_post_id"], :name => "index_blog_categories_blog_posts_on_bc_and_bp"
 
   create_table "blog_comments", :force => true do |t|
-    t.integer  "blog_post_id"
-    t.boolean  "spam"
-    t.string   "name"
-    t.string   "email"
-    t.text     "body"
-    t.string   "state"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "blog_post_id"
+    t.boolean   "spam"
+    t.string    "name"
+    t.string    "email"
+    t.text      "body"
+    t.string    "state"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "blog_comments", ["id"], :name => "index_blog_comments_on_id"
 
   create_table "blog_posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.boolean  "draft"
-    t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
+    t.string    "title"
+    t.text      "body"
+    t.boolean   "draft"
+    t.timestamp "published_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "user_id"
   end
 
   add_index "blog_posts", ["id"], :name => "index_blog_posts_on_id"
@@ -69,11 +69,27 @@ ActiveRecord::Schema.define(:version => 20110304102332) do
     t.timestamp "updated_at"
   end
 
+  create_table "categories_alertes", :id => false, :force => true do |t|
+    t.integer "categorie_id"
+    t.integer "alerte_id"
+  end
+
   create_table "categories_items", :force => true do |t|
     t.integer "item_id"
     t.string  "item_type"
     t.integer "categorie_id"
   end
+
+  create_table "colloques", :force => true do |t|
+    t.string   "title"
+    t.text     "contenu"
+    t.integer  "event_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "colloques", ["id"], :name => "index_colloques_on_id"
 
   create_table "documents", :force => true do |t|
     t.string    "titre"
@@ -87,13 +103,13 @@ ActiveRecord::Schema.define(:version => 20110304102332) do
   add_index "documents", ["id"], :name => "index_documents_on_id"
 
   create_table "enquetes", :force => true do |t|
-    t.string   "titre"
-    t.date     "publication"
-    t.text     "contenu"
-    t.string   "state"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "titre"
+    t.date      "publication"
+    t.text      "contenu"
+    t.string    "state"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "enquetes", ["id"], :name => "index_enquetes_on_id"
@@ -123,6 +139,16 @@ ActiveRecord::Schema.define(:version => 20110304102332) do
     t.string    "image_uid"
     t.string    "image_ext"
   end
+
+  create_table "news_items", :force => true do |t|
+    t.string    "title"
+    t.text      "body"
+    t.timestamp "publish_date"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
+  add_index "news_items", ["id"], :name => "index_news_items_on_id"
 
   create_table "page_part_translations", :force => true do |t|
     t.integer   "page_part_id"

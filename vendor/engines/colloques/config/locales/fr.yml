@@ -1,0 +1,24 @@
+fr:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    colloques:
+      title: Colloques
+  admin:
+    colloques:
+      index:
+        title: Colloques
+        create_new: Créer un nouveau Colloque
+        reorder: Réordonner les Colloques
+        reorder_done: Fin de réordonnancement des Colloques
+        sorry_no_results: "Désolé ! Aucun résultat."
+        no_items_yet: 'Il n''y a actuellement aucun colloque. Cliquer sur "Créer un nouveau Colloque" pour créer votre premier Colloque.'
+      colloque:
+        view_live_html: Voir ce Colloque <br/><em>(Ouvre une nouvelle fenêtre)</em>
+        edit: Modifier ce Colloque
+        delete: Supprimer définitivement ce Colloque
+  colloques:
+    show:
+      other: Autres Colloques

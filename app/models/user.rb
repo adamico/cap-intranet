@@ -56,3 +56,28 @@ class User < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+# Schema version: 20110325094353
+#
+# Table name: users
+#
+#  id                   :integer         primary key
+#  username             :string(255)     not null
+#  email                :string(255)     not null
+#  encrypted_password   :string(255)     not null
+#  password_salt        :string(255)     not null
+#  persistence_token    :string(255)
+#  created_at           :timestamp
+#  updated_at           :timestamp
+#  perishable_token     :string(255)
+#  current_sign_in_at   :timestamp
+#  last_sign_in_at      :timestamp
+#  current_sign_in_ip   :string(255)
+#  last_sign_in_ip      :string(255)
+#  sign_in_count        :integer
+#  remember_token       :string(255)
+#  reset_password_token :string(255)
+#  remember_created_at  :timestamp
+#
+

@@ -96,3 +96,19 @@ class BlogPost < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+# Schema version: 20110325094353
+#
+# Table name: blog_posts
+#
+#  id           :integer         primary key
+#  title        :string(255)
+#  body         :text
+#  draft        :boolean
+#  published_at :timestamp
+#  created_at   :timestamp
+#  updated_at   :timestamp
+#  user_id      :integer
+#
+

@@ -8,6 +8,7 @@ PATH
   remote: vendor/engines
   specs:
     refinerycms-alertes (1.0)
+    refinerycms-colloques (1.0)
     refinerycms-documents (1.0)
     refinerycms-enquetes (1.0)
     refinerycms-events (1.0)
@@ -239,6 +240,7 @@ DEPENDENCIES
   refinerycms (= 0.9.9)
   refinerycms-alertes (= 1.0)!
   refinerycms-blog (~> 1.3)
+  refinerycms-colloques (= 1.0)!
   refinerycms-documents (= 1.0)!
   refinerycms-enquetes (= 1.0)!
   refinerycms-events (= 1.0)!

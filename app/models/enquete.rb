@@ -18,18 +18,19 @@ class Enquete < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
-# Schema version: 20110223101349
+# Schema version: 20110325094353
 #
 # Table name: enquetes
 #
-#  id          :integer         not null, primary key
+#  id          :integer         primary key
 #  titre       :string(255)
 #  publication :date
 #  contenu     :text
 #  state       :string(255)
 #  position    :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  created_at  :timestamp
+#  updated_at  :timestamp
 #
 
