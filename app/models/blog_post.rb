@@ -33,7 +33,7 @@ class BlogPost < ActiveRecord::Base
   # next is now in << self
 
   def self.recent
-    limit(5)
+    limit(2)
   end
 
   def self.with_blog_categorie(categorie)
