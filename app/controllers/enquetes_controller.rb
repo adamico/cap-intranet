@@ -23,15 +23,13 @@ protected
 
   def find_all_enquetes
     @categorie = params[:categorie] || nil
+    @state = params[:state] || nil
     if @categorie
       categorie = Categorie.find_by_name(@categorie)
       enquetes = categorie.enquetes
+      enquetes = enquetes.with_state(@state) if @state
     else
-      enquetes = Enquete.all
-    end
-    @state = params[:state] || nil
-    if @state
-      enquetes = enquetes.with_state(@state)
+      enquetes = @state ? Enquete.with_state(@state) : Enquete.all
     end
     @enquetes_annees = enquetes.group_by {|e| e.publication.beginning_of_year}
   end

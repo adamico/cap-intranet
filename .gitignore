@@ -71,3 +71,6 @@ capybara-*html
 .sass-cache
 .sass-cache/*
 vendor/ruby
+
+# html
+*.html
