@@ -169,6 +169,8 @@ GEM
     refinerycms-i18n (0.9.9.10)
       refinerycms (>= 0.9.8)
       routing-filter (>= 0.2.3)
+    refinerycms-page-images (1.0.3)
+      refinerycms (>= 0.9.9)
     refinerycms-search (0.9.8)
       refinerycms (>= 0.9.8)
     routing-filter (0.2.3)
@@ -247,6 +249,7 @@ DEPENDENCIES
   refinerycms-generators (~> 0.9)
   refinerycms-i18n (~> 0.9.9)
   refinerycms-memberships (~> 1.0)!
+  refinerycms-page-images (~> 1.0)
   refinerycms-search (~> 0.9.8)
   rspec-rails (= 2.3)
   ruby-prof

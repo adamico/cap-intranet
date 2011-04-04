@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110325094353) do
+ActiveRecord::Schema.define(:version => 20110404120947) do
 
   create_table "alertes", :force => true do |t|
     t.string    "titre"
@@ -81,12 +81,12 @@ ActiveRecord::Schema.define(:version => 20110325094353) do
   end
 
   create_table "colloques", :force => true do |t|
-    t.string   "title"
-    t.text     "contenu"
-    t.integer  "event_id"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.text      "contenu"
+    t.integer   "event_id"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "colloques", ["id"], :name => "index_colloques_on_id"
@@ -127,6 +127,16 @@ ActiveRecord::Schema.define(:version => 20110325094353) do
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
+
+  create_table "image_pages", :id => false, :force => true do |t|
+    t.integer "image_id"
+    t.integer "page_id"
+    t.integer "position"
+    t.text    "caption"
+  end
+
+  add_index "image_pages", ["image_id"], :name => "index_image_pages_on_image_id"
+  add_index "image_pages", ["page_id"], :name => "index_image_pages_on_page_id"
 
   create_table "images", :force => true do |t|
     t.string    "image_mime_type"
