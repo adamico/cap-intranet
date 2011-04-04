@@ -88,8 +88,13 @@ a {
   .wrap_blog h2, .wrap_blog h3 {
     background: white;
     color: black; }
-  .wrap_blog article.blog_post {
-    border-bottom: 1px dotted black; }
+
+article.blog_post {
+  border-bottom: 1px dotted black; }
+  article.blog_post header {
+    width: 100%; }
+    article.blog_post header h1 {
+      line-height: 36px; }
 
 .news_item_truncated {
   border-bottom: 1px dotted black; }

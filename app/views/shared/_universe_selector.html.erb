@@ -4,7 +4,7 @@
     <ul>
       <% %w(cap crpv ceip).each do |universe|%>
         <li class=<%= (@categorie == universe) ? "selected" : "" %>>
-          <% if params[:controller] == "pages" %>
+          <% if %w(pages blog/posts).include? params[:controller] %>
             <%= link_to universe.upcase, :categorie => universe %>
           <% else %>
             <%= link_to universe.upcase, :categorie => universe, :month => @month, :year => @year, :state => @state %>
@@ -12,7 +12,7 @@
         </li>
       <% end %>
       <li class=<%= @categorie.nil? ? "selected" : ""%>>
-        <% if params[:controller] == "pages" %>
+        <% if %w(pages blog/posts).include? params[:controller] %>
           <%= link_to "Tous", root_path %>
         <% else %>
           <%= link_to "Tous", :month  => @month, :year => @year, :state => @state %>
