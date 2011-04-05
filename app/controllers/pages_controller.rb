@@ -33,6 +33,7 @@ class PagesController < ApplicationController
     # Find the page by the newer 'path' or fallback to the page's id if no path.
     @page = Page.find(params[:path] ? params[:path].to_s.split('/').last : params[:id])
 
+    @images_groups = @page.images.each_slice(6).to_a
     if @page.try(:live?) or (refinery_user? and current_user.authorized_plugins.include?("refinery_pages"))
       # if the admin wants this to be a "placeholder" page which goes to its first child, go to that instead.
       if @page.skip_to_first_child and (first_live_child = @page.children.order('lft ASC').where(:draft=>false).first).present?
