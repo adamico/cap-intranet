@@ -3,6 +3,10 @@
     <%= document.titre %>
     <span class="preview">&nbsp;</span>
   </span>
+  <span class='categorie'>
+    <% Categorie.all %>
+    (<%= document.categories_names.join(", ") rescue "" %>)
+  </span>
   <span class='actions'>
     <%= link_to refinery_icon_tag("application_go.png"), document_url(document),
         :title => t('.view_live_html'),

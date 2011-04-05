@@ -10,6 +10,15 @@
   </div>
 
   <div class='field'>
+    <label for="document_categories">Catégories</label>
+    <% categories = Categorie.all %>
+    <% categories.each do |categorie| %>
+      <%= check_box_tag "document[categories_names][]", categorie.name, @document.categories_names.include?(categorie.name) -%>
+      <%= categorie.name.upcase -%>
+    <% end %>
+  </div>
+
+  <div class='field'>
     <%= f.label :source -%>
 
     <%= render :partial => "/shared/admin/resource_picker", :locals => {
