@@ -15,8 +15,7 @@
         <% @images_groups.each_with_index do |images, index| -%>
           <div class="msg_thumb_wrapper" style=<%= index == 0 ? ";" : "display:none;"%>>
             <% images.each do |image| -%>
-              <%= link_to image_tag(image.thumbnail("200x200#c").url),
-                image.thumbnail("900x600").url %>
+              <%= link_to image_tag(image.thumbnail("75x75#c").url, :alt => image.thumbnail("900x600").url), "#" %>
             <% end %>
           </div>
         <% end -%>
