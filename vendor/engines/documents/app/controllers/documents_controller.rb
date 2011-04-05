@@ -1,5 +1,4 @@
 class DocumentsController < ApplicationController
-
   before_filter :find_all_documents
   before_filter :find_page
 
@@ -22,7 +21,13 @@ class DocumentsController < ApplicationController
 protected
 
   def find_all_documents
-    documents = Document.all
+    @categorie = params[:categorie] || nil
+    if @categorie
+      categorie = Categorie.find_by_name(@categorie)
+      documents = categorie.documents
+    else
+      documents = Document.all
+    end
     @documents_annees = documents.group_by { |d| d.created_at.beginning_of_year }
   end
 

@@ -7,16 +7,17 @@ class PagesController < ApplicationController
     if @categorie
       categorie = Categorie.find_by_name(@categorie)
       @recent_alertes = categorie.alertes.recent
+      @recent_documents = categorie.documents.recent
       @next_events = categorie.events.next
       @enquetes_en_cours = categorie.enquetes.en_cours
       @recent_blog_posts = BlogPost.with_blog_categorie(@categorie).live.recent.includes(:comments, :categories)
     else
       @recent_alertes = Alerte.recent
+      @recent_documents = Document.recent
       @next_events = Event.next
       @enquetes_en_cours = Enquete.en_cours
       @recent_blog_posts = BlogPost.live.recent.includes(:comments, :categories)
     end
-    @recent_documents = Document.recent
   end
 
   # This action can be accessed normally, or as nested pages.

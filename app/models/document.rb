@@ -1,4 +1,5 @@
 class Document < ActiveRecord::Base
+  is_categorisable
   is_asciiable
 
   alias_attribute :title, :ascii_titre
