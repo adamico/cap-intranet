@@ -140,40 +140,39 @@ $(function() {
        * the thumb that will be displayed in full mode
        */
       var $thumb = $('#msg_thumbs .msg_thumb_wrapper:nth-child('+current_thumb+')')
-          .find('a:nth-child('+ parseInt(current - nmb_images_wrapper*(current_thumb -1)) +')')
-            .find('img');
-            if($thumb.length){
-            var source = $thumb.attr('alt');
-            var $currentImage = $('#msg_wrapper').find('img');
-            if($currentImage.length){
-            $currentImage.fadeOut(function(){
-              $(this).remove();
-              $('<img />').load(function(){
-                var $image = $(this);
-                resize($image);
-                $image.hide();
-                $('#msg_wrapper').empty().append($image.fadeIn());
-                }).attr('src',source);
-              });
-            }
-            else{
+        .find('a:nth-child('+ parseInt(current - nmb_images_wrapper*(current_thumb -1)) +')')
+          .find('img');
+      if($thumb.length){
+        var source = $thumb.attr('alt');
+        var $currentImage = $('#msg_wrapper').find('img');
+        if($currentImage.length){
+          $currentImage.fadeOut(function(){
+            $(this).remove();
             $('<img />').load(function(){
               var $image = $(this);
               resize($image);
               $image.hide();
               $('#msg_wrapper').empty().append($image.fadeIn());
-              }).attr('src',source);
-            }
-
-            }
-            else{ //this is actually not necessary since we have a circular slideshow
-              if(dir == 'r')
-                --current;
-              else if(dir == 'l')
-                ++current;	
-              alternateThumbs();
-              return;
-            }
+            }).attr('src',source);
+          });
+        }
+        else{
+          $('<img />').load(function(){
+            var $image = $(this);
+            resize($image);
+            $image.hide();
+            $('#msg_wrapper').empty().append($image.fadeIn());
+          }).attr('src',source);
+        }
+      }
+      else{ //this is actually not necessary since we have a circular slideshow
+        if(dir == 'r')
+          --current;
+        else if(dir == 'l')
+          ++current;	
+        alternateThumbs();
+        return;
+      }
     }
 
     /**
@@ -190,17 +189,17 @@ $(function() {
           if(current_thumb > nmb_thumb_wrappers){
           current_thumb 	= 1;
           current 		= 1;
-          }	
+          }
           /**
            * if we are at the beggining, go to the end
-           */					
+           */
           else if(current_thumb == 0){
           current_thumb 	= nmb_thumb_wrappers;
           current 		= current_thumb*nmb_images_wrapper;
           }
 
           $('#msg_thumbs').find('.msg_thumb_wrapper:nth-child('+current_thumb+')')
-            .show();	
+            .show();
             }
 
             /**
@@ -220,7 +219,7 @@ $(function() {
               $('#msg_thumbs').find('.msg_thumb_wrapper:nth-child('+current_thumb+')')
                 .fadeOut(function(){
                   ++current_thumb;
-                  $next_wrapper.fadeIn();									
+                  $next_wrapper.fadeIn();
                   });
                 }
                 }
@@ -230,9 +229,9 @@ $(function() {
                   $('#msg_thumbs').find('.msg_thumb_wrapper:nth-child('+current_thumb+')')
                     .fadeOut(function(){
                       --current_thumb;
-                      $prev_wrapper.fadeIn();									
+                      $prev_wrapper.fadeIn();
                       });
-                    }				
+                    }
                     }
 
                     /**
@@ -263,8 +262,8 @@ $(function() {
                       var imgwidth 	= theImage.width;
                       var imgheight 	= theImage.height;
 
-                      var containerwidth  = 400;
-                      var containerheight = 400;
+                      var containerwidth  = 600;
+                      var containerheight = 600;
 
                       if(imgwidth	> containerwidth){
                         var newwidth = containerwidth;
