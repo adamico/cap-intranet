@@ -96,8 +96,8 @@ article.blog_post {
     article.blog_post header h1 {
       line-height: 36px;
       font-size: 1.5em;
-      -webkit-margin-before: 0;
-      -webkit-margin-after: 0; }
+      margin-top: 0;
+      margin-bottom: 0; }
 
 .news_item_truncated {
   border-bottom: 1px dotted black; }
