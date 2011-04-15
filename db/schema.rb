@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110404120947) do
+ActiveRecord::Schema.define(:version => 20110415121232) do
 
   create_table "alertes", :force => true do |t|
     t.string    "titre"
@@ -224,6 +224,11 @@ ActiveRecord::Schema.define(:version => 20110404120947) do
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
 
+  create_table "pages_roles", :id => false, :force => true do |t|
+    t.integer "page_id"
+    t.integer "role_id"
+  end
+
   create_table "points", :force => true do |t|
     t.string    "name"
     t.timestamp "start_at"
@@ -231,6 +236,19 @@ ActiveRecord::Schema.define(:version => 20110404120947) do
     t.timestamp "created_at"
     t.timestamp "updated_at"
   end
+
+  create_table "publications", :force => true do |t|
+    t.string   "titre"
+    t.text     "contenu"
+    t.integer  "source_id"
+    t.string   "publication_category"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "date"
+  end
+
+  add_index "publications", ["id"], :name => "index_publications_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string    "name"
@@ -267,6 +285,19 @@ ActiveRecord::Schema.define(:version => 20110404120947) do
 
   add_index "roles_users", ["role_id", "user_id"], :name => "index_roles_users_on_role_id_and_user_id"
   add_index "roles_users", ["user_id", "role_id"], :name => "index_roles_users_on_user_id_and_role_id"
+
+  create_table "seo_meta", :force => true do |t|
+    t.integer  "seo_meta_id"
+    t.string   "seo_meta_type"
+    t.string   "browser_title"
+    t.string   "meta_keywords"
+    t.text     "meta_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
+  add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
 
   create_table "slugs", :force => true do |t|
     t.string    "name"

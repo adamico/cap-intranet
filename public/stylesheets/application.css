@@ -133,11 +133,11 @@ article.blog_post {
     color: white;
     text-decoration: none; }
 
-.colloques h2, .colloques h3 {
+.colloques h2, .colloques h3, .publications h2, .publications h3 {
   background: black; }
-.colloques p a:hover {
+.colloques p a:hover, .publications p a:hover {
   background: black; }
-.colloques span.label {
+.colloques span.label, .publications span.label {
   color: black; }
 
 .news h2, .news h3 {
@@ -226,12 +226,12 @@ footer.page {
 .blog_post time.posted_at {
   display: inline; }
 
-#menu.alertes {
+#menu.alertes, #menu.publications {
   overflow: auto;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   background: black; }
-  #menu.alertes ul li a {
+  #menu.alertes ul li a, #menu.publications ul li a {
     color: white;
     text-shadow: 0 1px 0 #333333;
     background: black;
@@ -242,7 +242,7 @@ footer.page {
     -webkit-border-top-right-radius: 0;
     border-top-left-radius: 0 0;
     border-top-right-radius: 0 0; }
-  #menu.alertes ul li.selected a, #menu.alertes ul li a:hover {
+  #menu.alertes ul li.selected a, #menu.alertes ul li a:hover, #menu.publications ul li.selected a, #menu.publications ul li a:hover {
     background: white;
     color: black;
     text-shadow: 0 1px 0 white; }

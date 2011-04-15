@@ -1,0 +1,24 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    publications:
+      title: Publications
+  admin:
+    publications:
+      index:
+        title: Publications
+        create_new: CREATE NEW Publication
+        reorder: REORDR Publications
+        reorder_done: DUN REORDERIN Publications
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Publications YET. CLICK "CREATE NEW Publication" 2 ADD UR FURST publication.
+      publication:
+        view_live_html: VIEW DIS publication LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS publication
+        delete: REMOOV DIS publication FOREVR
+  publications:
+    show:
+      other: OTHR Publications

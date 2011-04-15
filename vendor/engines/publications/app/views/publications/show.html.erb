@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @publication.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @publication.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Contenu</h1>
+    <p>
+      <%=raw @publication.contenu %>
+    </p>
+  </section>
+  <section>
+    <h1>Source</h1>
+    <p>
+      <%= link_to 'source', @publication.source.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Publication Category</h1>
+    <p>
+      <%=raw @publication.publication_category_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="publications">
+      <% @publications.each do |publication| %>
+        <li>
+          <%= link_to publication.title, publication_url(publication) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

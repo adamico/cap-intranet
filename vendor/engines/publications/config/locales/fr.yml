@@ -1,0 +1,24 @@
+fr:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    publications:
+      title: Publications
+  admin:
+    publications:
+      index:
+        title: Publications
+        create_new: Créer une nouvelle Publication
+        reorder: Réordonner les Publications
+        reorder_done: Fin de réordonnancement des Publications
+        sorry_no_results: "Désolé ! Aucun résultat."
+        no_items_yet: "Il n'y a actuellement aucune Publication. Cliquer sur 'Créer une nouvelle Publication' pour en ajouter une."
+      publication:
+        view_live_html: Voir cette publication <br/><em>(Ouvre une nouvelle fenêtre)</em>
+        edit: Modifier cette Publication
+        delete: Supprimer définitivement cette Publication
+  publications:
+    show:
+      other: Autres Publications

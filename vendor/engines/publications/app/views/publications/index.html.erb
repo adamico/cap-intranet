@@ -1,0 +1,30 @@
+<% content_for :body_content_left do %>
+  <nav id="menu" class="publications">
+    <ul>
+      <% ["poster", "article", "livre", "chapitre"].each do |publication_category| %>
+        <li class=<%= (@publication_category == publication_category) ? "selected" : "" %>>
+          <%= link_to publication_category, :publication_category => publication_category %>
+      <% end %>
+      <li class=<%= @publication_category.nil? ? "selected" : ""%>>
+        <%= link_to "tous", publications_path %>
+      </li>
+    </ul>
+  </nav>
+  <div class="liste publications">
+    <% if @publications_annees.any? %>
+      <% @publications_annees.each do |annee, publications| %>
+        <h2><%= annee.strftime("%Y") %></h2>
+        <% publications.each do |publication| -%>
+          <p>
+            <span class="label"><%= l(publication.date, :format => "%d %B") %></span>
+            <%= link_to publication.titre, publication_url(publication) %>
+          </p>
+        <% end %>
+      <% end %>
+    <% else %>
+      Aucune publication.
+    <% end %>
+  </div>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

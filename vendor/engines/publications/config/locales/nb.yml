@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    publications:
+      title: Publications
+  admin:
+    publications:
+      index:
+        title: Publications
+        create_new: Lag en ny Publication
+        reorder: Endre rekkefølgen på Publications
+        reorder_done: Ferdig å endre rekkefølgen Publications
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Publications enda. Klikk på "Lag en ny Publication" for å legge til din første publication.
+      publication:
+        view_live_html: Vis hvordan denne publication ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne publication
+        delete: Fjern denne publication permanent
+  publications:
+    show:
+      other: Andre Publications

@@ -103,3 +103,5 @@ gem 'refinerycms-enquetes', '1.0', :path => 'vendor/engines'
 gem 'stringex'
 
 gem 'refinerycms-colloques', '1.0', :path => 'vendor/engines'
+
+gem 'refinerycms-publications', '1.0', :path => 'vendor/engines'

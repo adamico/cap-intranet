@@ -12,6 +12,7 @@ PATH
     refinerycms-documents (1.0)
     refinerycms-enquetes (1.0)
     refinerycms-events (1.0)
+    refinerycms-publications (1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -250,6 +251,7 @@ DEPENDENCIES
   refinerycms-i18n (~> 0.9.9)
   refinerycms-memberships (~> 1.0)!
   refinerycms-page-images (~> 1.0)
+  refinerycms-publications (= 1.0)!
   refinerycms-search (~> 0.9.8)
   rspec-rails (= 2.3)
   ruby-prof

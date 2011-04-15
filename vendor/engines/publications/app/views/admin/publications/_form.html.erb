@@ -1,6 +1,6 @@
-<%= form_for [:admin, @enquete] do |f| -%>
+<%= form_for [:admin, @publication] do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
-          :object => @enquete,
+          :object => @publication,
           :include_object_name => true
         } %>
 
@@ -10,22 +10,22 @@
   </div>
 
   <div class='field'>
-    <label for="enquete_categories">Catégories</label>
-    <% categories = Categorie.all %>
-    <% categories.each do |categorie| %>
-      <%= check_box_tag "enquete[categories_names][]", categorie.name, @enquete.categories_names.include?(categorie.name) -%>
-      <%= categorie.name.upcase -%>
-    <% end %>
+    <%= f.label :date -%>
+    <%= f.date_select :date -%>
   </div>
 
   <div class='field'>
-    <%= f.label :publication -%>
-    <%= f.date_select :publication -%>
+    <%= f.label :publication_category, "Type" -%>
+    <%= f.select :publication_category, [["poster", "poster"], ["article", "article"], ["livre", "livre"], ["chapitre", "chapitre"]] -%>
   </div>
 
   <div class='field'>
-    <%= f.label :state, "Etat" -%>
-    <%= f.select :state, [["en cours", "en cours"], ["terminee", "terminee"]] -%>
+    <%= f.label :source -%>
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+          :f => f,
+          :field => :source_id,
+          :resource => @publication.source,
+        } %>
   </div>
 
   <div class='field'>
@@ -48,12 +48,14 @@
     </div>
   </div>
 
+
+
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,
                 :continue_editing => false,
-                :delete_title => t('delete', :scope => 'admin.enquetes.enquete'),
-                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @enquete.titre)
+                :delete_title => t('delete', :scope => 'admin.publications.publication'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @publication.title)
               } %>
 <% end -%>
 <% content_for :javascripts do %>
