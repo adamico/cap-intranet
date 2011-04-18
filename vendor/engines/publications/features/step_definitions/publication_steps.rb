@@ -5,7 +5,7 @@ end
 Given /^I (only )?have publications titled "?([^\"]*)"?$/ do |only, titles|
   Publication.delete_all if only
   titles.split(', ').each do |title|
-    Publication.create(:title => title)
+    Publication.create(:titre => title)
   end
 end
 
