@@ -1,40 +1,14 @@
-<% content_for :body_content_title do %>
-  <%= @alerte.titre %>
-<% end %>
-
 <% content_for :body_content_left do %>
-  
-  <section>
-    <h1>Titre</h1>
-<p>    <%=raw @alerte.titre %>
-</p>
-  </section>
-  
-  <section>
-    <h1>Date</h1>
-<p>    <%=raw @alerte.date %>
-</p>
-  </section>
-  
-  <section>
-    <h1>Contenu</h1>
-<p>    <%=raw @alerte.contenu %>
-</p>
-  </section>
-  
+  <p id="date"><%=l @alerte.date %></p>
+  <h2><%= @alerte.titre %></h1>
+  <%=raw @alerte.contenu %>
 <% end %>
 
 <% content_for :body_content_right do %>
-<aside>
-  <h2><%= t('.other') %></h2>
-  <ul id="alertes">
-    <% @alertes.each do |alerte| %>
-      <li>
-        <%= link_to alerte.titre, alerte_url(alerte) %>
-      </li>
-    <% end %>
-  </ul>
-</aside>
+  <aside class="liste alertes">
+    <h2><%= link_to "Autres alertes", alertes_path %></h2>
+    <%= render 'recent', :alertes => @other_alertes %>
+  </aside>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>

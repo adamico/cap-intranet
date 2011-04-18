@@ -3,12 +3,21 @@
     :object => @alerte,
     :include_object_name => true
   } %>
-  
+
   <div class='field'>
     <%= f.label :titre -%>
     <%= f.text_field :titre, :class => 'larger widest' -%>
   </div>
-  
+
+  <div class='field'>
+    <label for="alerte_categories">Catégories</label>
+    <% categories = Categorie.all %>
+    <% categories.each do |categorie| %>
+      <%= check_box_tag "alerte[categories_names][]", categorie.name, @alerte.categories_names.include?(categorie.name) -%>
+      <%= categorie.name.upcase -%>
+    <% end %>
+  </div>
+
   <div class='field'>
     <%= f.label :date -%>
     <%= f.date_select :date -%>

@@ -1,10 +1,14 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(alerte) -%>">
   <span class='date'>
-    <%= l alerte.date %>
+    <%= l alerte.date rescue "" %>
   </span>
   <span class='title'>
     <%= alerte.titre %>
     <span class="preview">&nbsp;</span>
+  </span>
+  <span class='categorie'>
+    <% Categorie.all %>
+    (<%= alerte.categories_names.join(", ") rescue "" %>)
   </span>
   <span class='actions'>
     <%= link_to refinery_icon_tag("application_go.png"), alerte_url(alerte),

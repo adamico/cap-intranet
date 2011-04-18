@@ -1,13 +1,12 @@
-<% content_for :body_content_title do %>
-  <%= @event.titre %>
-<% end %>
-
 <% content_for :body_content_left do %>
-  <section>
-    <p>Début : <%= l @event.start_at %></p>
-    <p>Durée : <%= distance_of_time_in_words(@event.start_at, @event.end_at) %></p>
-  </section>
-  
+  <h2><%= @event.titre %></h2>
+  <p>Début : <%= l @event.start_at %></p>
+  <p>Durée : <%= distance_of_time_in_words(@event.start_at, @event.end_at) %></p>
+  <% Categorie.all -%>
+  <% @event.categories.each do |categorie| %>
+    Catégorie(s) : <%= categorie.name.upcase %>
+  <% end %>
+
   <% unless @event.contenu.blank? %>
     <section>
       <h1>Contenu</h1>
@@ -17,21 +16,9 @@
 <% end %>
 
 <% content_for :body_content_right do %>
-<aside>
-  <h2>Prochains événements</h2>
-  <% @events.reject! { |event| event === @event } %>
-  <% if @events.empty? %>
-    Aucun événement.
-  <% else %>
-    <div id="events">
-      <% @events.each do |event| %>
-        <p>
-          <%= event.start_at.strftime("%d/%m/%Y") %> :
-          <%= link_to event.titre, event_url(event) %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
+<aside class="liste events">
+  <h2><%= link_to "Prochains événements", events_path %></h2>
+  <%= render 'next_events', :events => @other_events %>
 </aside>
 <% end %>
 

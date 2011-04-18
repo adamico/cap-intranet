@@ -22,10 +22,10 @@ class AlertesController < ApplicationController
 protected
 
   def find_all_alertes
-    # Order by alerte date
-    if params[:categorie]
-      categorie = Categorie.find_by_name(params[:categorie])
-      alertes = categorie.alertes.order("date DESC").uniq
+    @categorie = params[:categorie] || nil
+    if @categorie
+      categorie = Categorie.find_by_name(@categorie)
+      alertes = categorie.alertes
     else
       alertes = Alerte.all
     end

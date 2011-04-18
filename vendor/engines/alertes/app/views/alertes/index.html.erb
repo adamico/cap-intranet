@@ -1,11 +1,21 @@
 <% content_for :body_content_left do %>
-  <ul id="alertes">
-    <% @alertes.each do |alerte| %>
-      <li>
-        <%= link_to alerte.titre, alerte_url(alerte) %>
-      </li>
+  <div class="liste alertes">
+    <% if @alertes_annees.any? %>
+      <% @alertes_annees.each do |annee, alertes| %>
+        <h2><%= annee.strftime("%Y") %></h2>
+        <% alertes.each do |alerte| %>
+          <p>
+            <span class="label"><%= l(alerte.date, :format => "%d %B") %></span>
+            <%= link_to alerte.titre, alerte_url(alerte) %>
+            <% Categorie.all -%>
+            <% links_to_categories(alerte) %>
+          </p>
+        <% end %>
+      <% end %>
+    <% else %>
+      Aucune alerte.
     <% end %>
-  </ul>
+  </div>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>

@@ -1,10 +1,9 @@
-<% content_for :body_content_title do %>
-  <%= @document.titre %>
-<% end %>
-
 <% content_for :body_content_left do %>
+  <h2><%= @document.titre %></h1>
   <section>
-    <p><%= link_to @document.source.file_name, @document.source.url %></p>
+    <% if @document.source %>
+      <p><%= link_to @document.source.file_name, @document.source.url %></p>
+    <% end %>
   </section>
 
   <section>
@@ -13,16 +12,10 @@
 <% end %>
 
 <% content_for :body_content_right do %>
-<aside>
-  <h2><%= t('.other') %></h2>
-  <ul id="documents">
-    <% @documents.each do |document| %>
-      <li>
-        <%= link_to document.titre, document_url(document) %>
-      </li>
-    <% end %>
-  </ul>
-</aside>
+  <aside class="liste documents">
+    <h2><%= link_to t('.other'), documents_path %></h2>
+    <%= render 'recent', :documents => @other_documents %>
+  </aside>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>

@@ -8,7 +8,16 @@
     <%= f.label :titre -%>
     <%= f.text_field :titre, :class => 'larger widest' -%>
   </div>
-  
+
+  <div class='field'>
+    <label for="event_categories">Catégories</label>
+    <% for categorie in Categorie.all %>
+      <% events = categorie.events %>
+      <%= check_box_tag "event[categories_names][]", categorie.name, @event.categories_names.include?(categorie.name) -%>
+      <%= categorie.name.upcase -%>
+    <% end %>
+  </div>
+
   <div class='field'>
     <%= f.label :start_at -%>
     <%= f.datetime_select :start_at -%>
