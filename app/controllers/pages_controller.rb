@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   # This action is usually accessed with the root path, normally '/'
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
+
     @categorie = params[:categorie] || nil
     if @categorie
       categorie = Categorie.find_by_name(@categorie)
@@ -31,18 +32,20 @@ class PagesController < ApplicationController
   #   GET /about/mission
   #
   def show
-    # Find the page by the newer 'path' or fallback to the page's id if no path.
-    @page = Page.find(params[:path] ? params[:path].to_s.split('/').last : params[:id])
+    @page = Page.find("#{params[:path]}/#{params[:id]}".split('/').last)
 
-    @images_groups = @page.images.each_slice(6).to_a
-    if @page.try(:live?) or (refinery_user? and current_user.authorized_plugins.include?("refinery_pages"))
+    if @page.try(:live?) || (refinery_user? && current_user.authorized_plugins.include?("refinery_pages"))
       # if the admin wants this to be a "placeholder" page which goes to its first child, go to that instead.
-      if @page.skip_to_first_child and (first_live_child = @page.children.order('lft ASC').where(:draft=>false).first).present?
+      if @page.skip_to_first_child && (first_live_child = @page.children.order('lft ASC').where(:draft=>false).first).present?
         redirect_to first_live_child.url
+      elsif @page.link_url.present?
+        redirect_to @page.link_url and return
       end
     else
       error_404
     end
+
+    @images_groups = @page.images.each_slice(6).to_a
   end
 
 end

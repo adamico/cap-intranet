@@ -57,10 +57,36 @@ a
   width: 319px
   border-left: 1px dotted black
 
+#top_header
+  overflow: auto
+
+/* Universe selector */
+
+#universe_selector_wrap
+  margin-top: 17px
+  margin-bottom: 17px
+  width: 400px
+  margin-left: 10px
+  float: left
+  span
+    float: left
+    padding: 5px 10px
+  .universe
+    clear: none
+    ul li a
+      -moz-border-radius: 5px
+      -webkit-border-radius: 5px
+      -webkit-border-radius: 5px
+      border-radius: 5px 5px
+      border-radius: 5px 5px
+
+
 #menu_wrapper
-  clear: both
+  clear: right
+  overflow: auto
 
 #menu
+  clear: left
   ul
     list-style: none
     padding: 0px
@@ -99,7 +125,7 @@ a
 
 #search
   float: right
-  margin: 0.67em 0
+  margin: 17px 0
 
 /* Home */
 
@@ -245,17 +271,6 @@ p#date
   padding: 0
   margin: 0
   font-weight: bold
-
-
-/* Universe selector */
-
-#universe_selector_wrap
-  float: right
-  span
-    float: left
-    padding: 5px 10px
-  nav#menu
-    float: right
 
 /* Footer /*
 

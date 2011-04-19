@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110415121232) do
+ActiveRecord::Schema.define(:version => 20110418150144) do
 
   create_table "alertes", :force => true do |t|
     t.string    "titre"
@@ -183,39 +183,32 @@ ActiveRecord::Schema.define(:version => 20110415121232) do
   add_index "page_parts", ["page_id"], :name => "index_page_parts_on_page_id"
 
   create_table "page_translations", :force => true do |t|
-    t.integer   "page_id"
-    t.string    "locale"
-    t.string    "title"
-    t.string    "meta_keywords"
-    t.text      "meta_description"
-    t.string    "browser_title"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.integer  "page_id"
+    t.string   "locale"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "custom_title"
   end
 
   add_index "page_translations", ["page_id"], :name => "index_page_translations_on_page_id"
 
   create_table "pages", :force => true do |t|
-    t.string    "title"
-    t.integer   "parent_id"
-    t.integer   "position"
-    t.string    "path"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "meta_keywords"
-    t.text      "meta_description"
-    t.boolean   "show_in_menu",        :default => true
-    t.string    "link_url"
-    t.string    "menu_match"
-    t.boolean   "deletable",           :default => true
-    t.string    "custom_title"
-    t.string    "custom_title_type",   :default => "none"
-    t.boolean   "draft",               :default => false
-    t.string    "browser_title"
-    t.boolean   "skip_to_first_child", :default => false
-    t.integer   "lft"
-    t.integer   "rgt"
-    t.integer   "depth"
+    t.integer  "parent_id"
+    t.integer  "position"
+    t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "show_in_menu",        :default => true
+    t.string   "link_url"
+    t.string   "menu_match"
+    t.boolean  "deletable",           :default => true
+    t.string   "custom_title_type",   :default => "none"
+    t.boolean  "draft",               :default => false
+    t.boolean  "skip_to_first_child", :default => false
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
   end
 
   add_index "pages", ["depth"], :name => "index_pages_on_depth"
@@ -238,14 +231,14 @@ ActiveRecord::Schema.define(:version => 20110415121232) do
   end
 
   create_table "publications", :force => true do |t|
-    t.string   "titre"
-    t.text     "contenu"
-    t.integer  "source_id"
-    t.string   "publication_category"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.date     "date"
+    t.string    "titre"
+    t.text      "contenu"
+    t.integer   "source_id"
+    t.string    "publication_category"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.date      "date"
   end
 
   add_index "publications", ["id"], :name => "index_publications_on_id"
@@ -323,22 +316,21 @@ ActiveRecord::Schema.define(:version => 20110415121232) do
   add_index "user_plugins", ["user_id", "name"], :name => "index_unique_user_plugins", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string    "username",             :null => false
-    t.string    "email",                :null => false
-    t.string    "encrypted_password",   :null => false
-    t.string    "password_salt",        :null => false
-    t.string    "persistence_token"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "perishable_token"
-    t.timestamp "current_sign_in_at"
-    t.timestamp "last_sign_in_at"
-    t.string    "current_sign_in_ip"
-    t.string    "last_sign_in_ip"
-    t.integer   "sign_in_count"
-    t.string    "remember_token"
-    t.string    "reset_password_token"
-    t.timestamp "remember_created_at"
+    t.string   "username",             :null => false
+    t.string   "email",                :null => false
+    t.string   "encrypted_password",   :null => false
+    t.string   "persistence_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "perishable_token"
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.integer  "sign_in_count"
+    t.string   "remember_token"
+    t.string   "reset_password_token"
+    t.datetime "remember_created_at"
   end
 
   add_index "users", ["id"], :name => "index_users_on_id"

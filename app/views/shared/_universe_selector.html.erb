@@ -1,6 +1,6 @@
 <div id="universe_selector_wrap">
   <span>Choix de l'univers :</span>
-  <nav id="menu">
+  <nav id="menu" class="universe">
     <ul>
       <% %w(cap crpv ceip).each do |universe|%>
         <li class=<%= (@categorie == universe) ? "selected" : "" %>>
