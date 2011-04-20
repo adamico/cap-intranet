@@ -20,14 +20,14 @@
 
   <div class='field'>
     <%= f.label :date -%>
-    <%= f.date_select :date -%>
+    <%= f.date_select :date, :start_year => Time.now.year - 10, :end_year => Time.now.year -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :contenu -%>
     <%= f.text_area :contenu, :rows => 20, :class => 'wymeditor widest' -%>
   </div>
-  
+
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,
