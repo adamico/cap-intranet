@@ -8,6 +8,7 @@ def setup_environment
 
   # Requires supporting files with custom matchers and macros, etc,
   # in ./support/ and its subdirectories.
+  Dir[File.expand_path('../support/**/*.rb', __FILE__)].each {|f| require f}
 
   RSpec.configure do |config|
     # == Mock Framework
@@ -30,14 +31,11 @@ def setup_environment
 end
 
 def each_run
-  Dir[File.expand_path('../support/**/*.rb', __FILE__)].each {|f| require f}
-  require "factory_girl"
-  Factory.find_definitions
 end
 
-unless RbConfig::CONFIG["host_os"] =~ %r!(msdos|mswin|djgpp|mingw)!
-  require 'rubygems'
-  require 'spork'
+require 'rubygems'
+# If spork is available in the Gemfile it'll be used but we don't force it.
+unless (begin; require 'spork'; rescue LoadError; nil end).nil?
 
   Spork.prefork do
     # Loading more in this block will cause your tests to run faster. However,
