@@ -12,11 +12,11 @@
         <a href="#" id="msg_next" class="msg_next"></a>
       </div>
       <div id="msg_thumbs" class="msg_thumbs"><!-- top has to animate to 0px, default -230px -->
-        <% @images_groups.each_with_index do |images, index| -%>
+        <% @page.images.each_slice(6).each_with_index do |images, index| -%>
           <div class="msg_thumb_wrapper" style=<%= index == 0 ? ";" : "display:none;"%>>
             <% images.each do |image| -%>
-              <%= link_to image_tag(image.thumbnail("75x75#c").url, :alt => image.thumbnail("900x600").url), "#" %>
-            <% end %>
+              <%= link_to image_tag(image.thumbnail("75x75#c").url, :alt => image.thumbnail("900x600").url), "#"%>
+            <% end%>
           </div>
         <% end -%>
         <a href="#" id="msg_thumb_next" class="msg_thumb_next"></a>
