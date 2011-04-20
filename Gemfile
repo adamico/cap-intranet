@@ -50,6 +50,7 @@ group :development, :test do
   # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
   gem 'refinerycms-testing',    '~> 0.9.9.18'
+  gem 'spork', '~> 0.9.0.rc'
 end
 
 # END REFINERY CMS ============================================================
