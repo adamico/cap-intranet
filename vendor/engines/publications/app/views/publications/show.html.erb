@@ -1,44 +1,20 @@
-<% content_for :body_content_title do %>
-  <%= @publication.title %>
-<% end %>
-
 <% content_for :body_content_left do %>
+  <h2><%= @publication.titre %></h2>
   <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @publication.title %>
-    </p>
+    <p><%= @publication.publication_category.titleize %> publié en <%= l(@publication.date, :format => "%Y") %></p>
   </section>
   <section>
-    <h1>Contenu</h1>
-    <p>
-      <%=raw @publication.contenu %>
-    </p>
+    <p>Fichier : <%= link_to @publication.source.file_name, @publication.source.url %></p>
   </section>
   <section>
-    <h1>Source</h1>
-    <p>
-      <%= link_to 'source', @publication.source.url %>
-    </p>
-  </section>
-  <section>
-    <h1>Publication Category</h1>
-    <p>
-      <%=raw @publication.publication_category_id %>
-    </p>
+    <p><%=raw @publication.contenu %></p>
   </section>
 <% end %>
 
 <% content_for :body_content_right do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="publications">
-      <% @publications.each do |publication| %>
-        <li>
-          <%= link_to publication.title, publication_url(publication) %>
-        </li>
-      <% end %>
-    </ul>
+  <aside class="liste publications">
+    <h2><%= link_to t('.other'), publications_path %></h2>
+    <%= render 'other', :publications => @other_publications %>
   </aside>
 <% end %>
 

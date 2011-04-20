@@ -1,0 +1,12 @@
+<% if publications.empty? %>
+  Aucune publication.
+<% else %>
+  <div class="other publications">
+    <% publications.each do |publication| %>
+      <p>
+        <span class="label"><%= l(publication.date, :format => "%d %B %Y") rescue ""%></span>
+        <%= link_to publication.titre, publication_url(publication) %>
+      </p>
+    <% end %>
+  </div>
+<% end %>

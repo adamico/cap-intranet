@@ -10,6 +10,10 @@ class Publication < ActiveRecord::Base
 
   default_scope order("date DESC")
 
+  def self.recent
+    limit(5)
+  end
+
   def self.with_publication_category(publication_category)
     where(:publication_category => publication_category)
   end
