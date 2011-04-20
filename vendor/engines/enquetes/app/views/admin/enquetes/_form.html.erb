@@ -20,7 +20,7 @@
 
   <div class='field'>
     <%= f.label :publication -%>
-    <%= f.date_select :publication -%>
+    <%= f.date_select :publication, :start_year => Time.now.year - 10, :end_year => Time.now.year  -%>
   </div>
 
   <div class='field'>
