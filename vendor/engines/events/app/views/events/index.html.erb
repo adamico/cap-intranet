@@ -1,9 +1,16 @@
 <% content_for :stylesheets do %>
-  <%= stylesheet_link_tag 'event_calendar' %>
+  <%= stylesheet_link_tag "fullcalendar.css" %>
+<% end %>
+
+<% content_for :javascripts do -%>
+  <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
+  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+  <%= javascript_include_tag "fullcalendar.min.js" %>
+  <%= javascript_include_tag "calendar.js" %>
 <% end %>
 
 <% content_for :body_content_left do %>
-  <%= raw event_calendar %>
+  <div id='calendar'></div>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>

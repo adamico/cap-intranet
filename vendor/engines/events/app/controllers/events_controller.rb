@@ -1,28 +1,28 @@
 class EventsController < ApplicationController
   before_filter :find_page
 
+
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
     #present(@page)
 
-    @month = (params[:month] || Time.zone.now.month).to_i
-    @year = (params[:year] || Time.zone.now.year).to_i
-
-    @shown_month = Date.civil(@year, @month)
 
     @categorie = params[:categorie] || nil
     if @categorie
       categorie = Categorie.find_by_name(@categorie)
-      events = categorie.events.event_strips_for_month(@shown_month)
+      events = categorie.events.scoped
     else
-      events = Event.event_strips_for_month(@shown_month)
+      events = Event.scoped
     end
-    @event_strips = events
+    @events = events.after(params[:start]) if params[:start]
+    @events = events.before(params[:end]) if params[:end]
 
-    # To restrict what events are included in the result you can pass additional find options like this:
-    #
-    # @event_strips = Event.event_strips_for_month(@shown_month, :include => :some_relation, :conditions => 'some_relations.some_column = true')
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @events }
+      format.js { render :json => @events }
+    end
 
   end
 
@@ -40,5 +40,4 @@ protected
   def find_page
     @page = Page.find_by_link_url("/events")
   end
-
 end
