@@ -47,12 +47,12 @@ gem 'sauberia-aws-s3', :require => 'aws/s3'
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
 
-gem 'refinerycms',              '= 0.9.9.19'
+gem 'refinerycms',              '= 1.0.0'
 
 group :development, :test do
   # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
-  gem 'refinerycms-testing',    '~> 0.9.9.19'
+  gem 'refinerycms-testing',    '= 1.0.0'
   gem 'spork', '~> 0.9.0.rc'
 end
 
@@ -66,7 +66,7 @@ end
 # gem 'refinerycms-portfolio',    '~> 0.9.9'
 # gem 'refinerycms-theming',      '~> 1.0'
 gem 'refinerycms-search',       '~> 0.9.8'
-gem 'refinerycms-blog',         '~> 1.3'
+gem 'refinerycms-blog',         '~> 1.5'
 gem 'refinerycms-page-images', '~> 1.0'
 gem 'refinerycms-memberships',    '~> 1.0', :git => 'https://github.com/rbriank/refinerycms_membership.git'
 
