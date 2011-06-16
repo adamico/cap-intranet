@@ -26,3 +26,14 @@ end
 
 Refinery.rescue_not_found = false
 Refinery.s3_backend = false
+
+# use pry instead of irb
+# https://gist.github.com/941174
+#
+silence_warnings do
+  begin
+    require 'pry'
+    IRB = Pry
+  rescue LoadError
+  end
+end
