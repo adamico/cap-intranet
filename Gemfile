@@ -10,6 +10,8 @@ gem 'haml'
 group :development do
   gem 'sqlite3'
   gem 'haml-rails'
+  gem 'pry'
+  gem 'pry-doc'
 end
 
 group :production do

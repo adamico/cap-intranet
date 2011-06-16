@@ -69,6 +69,7 @@ GEM
     celerity (0.8.9)
     childprocess (0.1.8)
       ffi (~> 1.0.6)
+    coderay (0.9.7)
     configuration (1.2.0)
     cucumber (0.10.2)
       builder (>= 2.1.2)
@@ -121,6 +122,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.4.1)
+      ruby_parser (>= 2.0.5)
     mime-types (1.16)
     moretea-awesome_nested_set (1.4.3.1)
       activerecord (~> 3.0.0)
@@ -128,6 +131,14 @@ GEM
     orm_adapter (0.0.4)
     pg (0.11.0)
     polyglot (0.3.1)
+    pry (0.8.3)
+      coderay (>= 0.9.7)
+      method_source (>= 0.4.0)
+      ruby_parser (>= 2.0.5)
+      slop (>= 1.5.3)
+    pry-doc (0.2.1)
+      pry (>= 0.7.0)
+      yard (>= 0.6.4)
     rack (1.2.2)
     rack-cache (1.0.1)
       rack (>= 0.4)
@@ -230,6 +241,8 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.5.0)
+    ruby_parser (2.0.6)
+      sexp_processor (~> 3.0)
     rubyzip (0.9.4)
     sauberia-aws-s3 (0.6.2.1254423624)
       builder
@@ -242,6 +255,8 @@ GEM
       rubyzip
     seo_meta (1.0.4)
       refinerycms-generators (~> 1.0.1)
+    sexp_processor (3.0.5)
+    slop (1.5.3)
     spork (0.9.0.rc5)
     sqlite3 (1.3.3)
     stringex (1.2.1)
@@ -257,6 +272,7 @@ GEM
     xml-simple (1.0.15)
     xpath (0.1.3)
       nokogiri (~> 1.3)
+    yard (0.6.8)
 
 PLATFORMS
   ruby
@@ -267,6 +283,8 @@ DEPENDENCIES
   haml-rails
   kronn-has_many_polymorphs
   pg
+  pry
+  pry-doc
   rails (= 3.0.7)
   refinerycms (= 0.9.9.19)
   refinerycms-alertes (= 1.0)!
