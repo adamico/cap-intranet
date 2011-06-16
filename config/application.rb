@@ -8,8 +8,13 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 require 'has_many_polymorphs'
 
+
 module CapIntranet
   class Application < Rails::Application
+    Sass::Plugin.add_template_location(
+      config.root.join('public/stylesheets/sass').to_s,
+      config.root.join('public/stylesheets').to_s
+    )
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
