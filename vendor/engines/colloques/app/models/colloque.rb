@@ -5,6 +5,8 @@ class Colloque < ActiveRecord::Base
 
   belongs_to :event
 
+  default_scope joins(:event).order('events.start_at DESC')
+
   def date
     if event
       self.event.start_at.to_date
