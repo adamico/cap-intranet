@@ -1,7 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9.rc3'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -47,14 +45,14 @@ gem 'sauberia-aws-s3', :require => 'aws/s3'
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
 
-gem 'refinerycms',              '= 1.0.0'
+gem 'refinerycms',              '= 1.0.9'
 gem 'fog'
 
 group :development, :test do
   # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
-  gem 'refinerycms-testing',    '= 1.0.0'
-  gem 'spork', '~> 0.9.0.rc'
+  gem 'refinerycms-testing',    '= 1.0.9'
+  gem 'spork', '~> 0.9.0.rc9'
 end
 
 # END REFINERY CMS ============================================================
@@ -85,4 +83,5 @@ gem 'refinerycms-publications', '1.0', :path => 'vendor/engines'
 gem 'kronn-has_many_polymorphs'
 gem 'annotate'
 gem 'stringex'
+gem 'newrelic_rpm'
 # END USER DEFINED
