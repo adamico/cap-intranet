@@ -7,15 +7,12 @@ gem 'haml'
 gem 'sass'
 
 group :development do
-  gem 'sqlite3'
   gem 'haml-rails'
   gem 'pry'
   gem 'pry-doc'
 end
 
-group :production do
-  gem "pg"
-end
+gem "pg"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -84,4 +81,5 @@ gem 'kronn-has_many_polymorphs'
 gem 'annotate'
 gem 'stringex'
 gem 'newrelic_rpm'
+gem 'thin'
 # END USER DEFINED

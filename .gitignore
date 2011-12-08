@@ -225,3 +225,4 @@ capybara-*html
 
 vendor/ruby
 vendor/cache
+config/database.yml
