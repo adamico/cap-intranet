@@ -83,3 +83,7 @@ gem 'stringex'
 gem 'newrelic_rpm'
 gem 'thin'
 # END USER DEFINED
+#
+group :development do
+  gem 'sqlite3'
+end
