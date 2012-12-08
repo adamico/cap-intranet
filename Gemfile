@@ -80,7 +80,7 @@ gem 'refinerycms-publications', '1.0', :path => 'vendor/engines'
 gem 'kronn-has_many_polymorphs'
 gem 'annotate'
 gem 'stringex'
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', "~> 3.5.3.25"
 gem 'thin'
 # END USER DEFINED
 #
